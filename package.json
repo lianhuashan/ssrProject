@@ -1,0 +1,19 @@
+{
+  "name": "ssrproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lianhuashan/ssrProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lianhuashan/ssrProject/issues"
+  },
+  "homepage": "https://github.com/lianhuashan/ssrProject#readme"
+}
