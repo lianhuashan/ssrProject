@@ -9,7 +9,13 @@ import ErrorBoudary from '../errorHandler/ErrorBoudary';
 const routes: RouteObject[] = [
   {
     path: '/',
-    element: <Home />
+    element: <Home />,
+    loader: () => {
+      return [
+        { username: 'aa', id: 1 },
+        { username: 'bb', id: 2 }
+      ];
+    }
   },
   { path: '/book/info', element: <BookInfo /> },
   { path: '/book/detail', element: <BookDetail /> },

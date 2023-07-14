@@ -1,47 +1,21 @@
-import { useState } from 'react';
-import { AppDispatch, RootState, useAppDispatch, useAppState } from '../store';
+import { useRef, useState } from 'react';
+import { useAppDispatch, useAppSelector } from '../hooks/common';
 import { connect } from 'react-redux';
-import { increment, decrement } from '../store/counterReducer';
-
-// const mapStateToProps = (state: RootState) => ({
-//   count: state.counter.value
-// });
-
-// const mapDispatchToProps = (dispatch: AppDispatch) => ({
-//   increment,
-//   decrement
-//   // incrementByAmount: () => dispatch({ type: 'incrementByAmount' }, ownProps.amount)
-// });
-
-// type CounterProps = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>;
-// const ConnectCounter = (props: CounterProps) => {
-//   const [amount, setAmount] = useState(0);
-//   return (
-//     <div>
-//       当前的counter: {props.count}
-//       <button onClick={() => props.dispatch({ type: 'increment' })}>+</button>
-//       <button onClick={() => props.dispatch({ type: 'decrement' })}>-</button>
-//       <div>
-//         <input type="number" onChange={(e) => setAmount(+e.target.value)} />
-//         {/* <button onClick={() => props.incrementByAmount({ amount })}>确定</button> */}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default connect(mapStateToProps, mapDispatchToProps)(ConnectCounter);
+import type { RootState, AppDispatch } from '../store';
+import { increment, decrement, incrementByAmount, incrementBy, decrementBy, fetchCount } from '../store/counterReducer';
 
 const Counter = () => {
-  const count = useAppState((state) => state.counter.value);
+  const count = useAppSelector((state) => state.counter.value);
   const appDispatch = useAppDispatch();
+  const ref = useRef<HTMLInputElement>(null);
   return (
     <div>
       当前的counter: {count}
-      <button onClick={() => appDispatch(increment)}>+</button>
-      <button onClick={() => appDispatch(decrement)}>-</button>
+      <button onClick={() => appDispatch(increment())}>+</button>
+      <button onClick={() => appDispatch(decrement())}>-</button>
       <div>
-        {/* <input type="number" onChange={(e) => setAmount(+e.target.value)} /> */}
-        {/* <button onClick={() => props.incrementByAmount({ amount })}>确定</button> */}
+        <input type="number" ref={ref} />
+        <button onClick={() => appDispatch(fetchCount(Number(ref.current?.value || 0)))}>确定</button>
       </div>
     </div>
   );

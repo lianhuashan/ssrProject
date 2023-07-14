@@ -24,29 +24,29 @@ const clientConfig = {
         type: 'asset/resource'
       }
     ]
-  },
+  }
   // devServer: { static: {} }
 
-  devServer: {
-    historyApiFallback: true,
-    static: { directory: path.resolve(__dirname, '..', 'public') },
-    hot: true,
-    host: '0.0.0.0',
-    port: 5000,
-    client: {
-      logging: 'info'
-    },
+  // devServer: {
+  //   historyApiFallback: true,
+  //   static: { directory: path.resolve(__dirname, '..', 'public') },
+  //   hot: true,
+  //   host: '0.0.0.0',
+  //   port: 5000,
+  //   client: {
+  //     logging: 'info'
+  //   },
 
-    onListening: function (devServer) {
-      if (!devServer) {
-        throw new Error('webpack-dev-server is not defined');
-      }
+  //   onListening: function (devServer) {
+  //     if (!devServer) {
+  //       throw new Error('webpack-dev-server is not defined');
+  //     }
 
-      const port = devServer.server.address().port;
-      console.log('Listening on port:', port);
-    }
-  },
-  plugins: [new HtmlWebpackPlugin({ title: 'ssr project', template: path.resolve(__dirname, '..', 'template.html') })]
+  //     const port = devServer.server.address().port;
+  //     console.log('Listening on port:', port);
+  //   }
+  // },
+  // plugins: [new HtmlWebpackPlugin({ title: 'ssr project', template: path.resolve(__dirname, '..', 'template.html') })]
 };
 
 module.exports = merge(config, clientConfig);
