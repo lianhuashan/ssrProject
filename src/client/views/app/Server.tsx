@@ -10,6 +10,13 @@ let { query, dataRoutes } = createStaticHandler(routes);
 export const render = async (request: express.Request) => {
   let remixRequest = createFetchRequest(request);
   let context = await query(remixRequest);
+  // try {
+  //   remixRequest = createFetchRequest(request);
+  //   context = await query(remixRequest);
+  // } catch (e) {
+  //   console.log('query is error');
+  //   console.log(e.message);
+  // }
 
   if (context instanceof Response) {
     throw context;
@@ -28,6 +35,8 @@ export const render = async (request: express.Request) => {
 
 export function createFetchRequest(req: express.Request): Request {
   let origin = `${req.protocol}://${req.get('host')}`;
+  // let origin = ;
+  let port = '3001';
   // Note: This had to take originalUrl into account for presumably vite's proxying
   let url = new URL(req.originalUrl || req.url, origin);
 

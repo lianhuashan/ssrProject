@@ -5,16 +5,22 @@ import Home from '../views/Home';
 import Login from '../views/Login';
 import type { RouteObject } from 'react-router-dom';
 import ErrorBoudary from '../errorHandler/ErrorBoudary';
-
+import axios from '../request';
+import type { IndexCategory } from '../types';
 const routes: RouteObject[] = [
   {
     path: '/',
     element: <Home />,
-    loader: () => {
-      return [
-        { username: 'aa', id: 1 },
-        { username: 'bb', id: 2 }
-      ];
+    loader: async () => {
+      let res = null;
+      try {
+        res = await axios.get<ResType<IndexCategory>>('/v1/index');
+      } catch (e) {
+        console.log('error coming', e?.message);
+      } finally {
+      }
+      console.log('fetch finished', res?.data);
+      return res?.data || null;
     }
   },
   { path: '/book/info', element: <BookInfo /> },

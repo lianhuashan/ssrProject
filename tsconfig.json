@@ -2,6 +2,11 @@
   "compilerOptions": {
     "target": "ES2015",
     "module": "ESNext",
+    "typeRoots": [
+      "./types",
+      "**/**/types",
+      "node_modules/@types"
+    ],
     "allowJs": true,
     "checkJs": true,
     "jsx": "preserve",
