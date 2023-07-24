@@ -1,3 +1,9 @@
+export interface ResType<T> {
+  data: T;
+  state: number;
+  type: 'success' | 'fail' | 'error';
+}
+
 export interface Category {
   covers?: string[];
   bookTitles?: string[];

@@ -73,6 +73,9 @@ devDependencies:
   '@types/react-router-dom':
     specifier: ^5.3.3
     version: 5.3.3
+  '@types/webpack-hot-middleware':
+    specifier: ^2.25.6
+    version: 2.25.6(webpack-cli@5.1.4)
   babel-loader:
     specifier: ^9.1.2
     version: 9.1.2(@babel/core@7.22.5)(webpack@5.87.0)
@@ -109,9 +112,15 @@ devDependencies:
   webpack-cli:
     specifier: ^5.1.4
     version: 5.1.4(webpack-dev-server@4.15.1)(webpack@5.87.0)
+  webpack-dev-middleware:
+    specifier: ^6.1.1
+    version: 6.1.1(webpack@5.87.0)
   webpack-dev-server:
     specifier: ^4.15.1
     version: 4.15.1(webpack-cli@5.1.4)(webpack@5.87.0)
+  webpack-hot-middleware:
+    specifier: ^2.25.4
+    version: 2.25.4
   webpack-merge:
     specifier: ^5.9.0
     version: 5.9.0
@@ -1839,6 +1848,19 @@ packages:
   /@types/use-sync-external-store@0.0.3:
     resolution: {integrity: sha512-EwmlvuaxPNej9+T4v5AuBPJa2x2UOJVdjCtDHgcDqitUeOtjnJKJ+apYjVcAoBEMjKW1VVFGZLUb5+qqa09XFA==}
     dev: false
+
+  /@types/webpack-hot-middleware@2.25.6(webpack-cli@5.1.4):
+    resolution: {integrity: sha512-1Q9ClNvZR30HIsEAHYQL3bXJK1K7IsrqjGMTfIureFjphsGOZ3TkbeoCupbCmi26pSLjVTPHp+pFrJNpOkBSVg==}
+    dependencies:
+      '@types/connect': 3.4.35
+      tapable: 2.2.1
+      webpack: 5.87.0(webpack-cli@5.1.4)
+    transitivePeerDependencies:
+      - '@swc/core'
+      - esbuild
+      - uglify-js
+      - webpack-cli
+    dev: true
 
   /@types/ws@8.5.5:
     resolution: {integrity: sha512-lwhs8hktwxSjf9UaZ9tG5M03PGogvFaH8gUgLNbN9HKIg0dvv6q+gkSuJ8HN4/VbyxkuLzCjlN7GquQ0gUJfIg==}
@@ -5144,6 +5166,23 @@ packages:
       webpack: 5.87.0(webpack-cli@5.1.4)
     dev: true
 
+  /webpack-dev-middleware@6.1.1(webpack@5.87.0):
+    resolution: {integrity: sha512-y51HrHaFeeWir0YO4f0g+9GwZawuigzcAdRNon6jErXy/SqV/+O6eaVAzDqE6t3e3NpGeR5CS+cCDaTC+V3yEQ==}
+    engines: {node: '>= 14.15.0'}
+    peerDependencies:
+      webpack: ^5.0.0
+    peerDependenciesMeta:
+      webpack:
+        optional: true
+    dependencies:
+      colorette: 2.0.20
+      memfs: 3.5.3
+      mime-types: 2.1.35
+      range-parser: 1.2.1
+      schema-utils: 4.2.0
+      webpack: 5.87.0(webpack-cli@5.1.4)
+    dev: true
+
   /webpack-dev-server@4.15.1(webpack-cli@5.1.4)(webpack@5.87.0):
     resolution: {integrity: sha512-5hbAst3h3C3L8w6W4P96L5vaV0PxSmJhxZvWKYIdgxOQm8pNZ5dEOmmSLBVpP85ReeyRt6AS1QJNyo/oFFPeVA==}
     engines: {node: '>= 12.13.0'}
@@ -5194,6 +5233,14 @@ packages:
       - debug
       - supports-color
       - utf-8-validate
+    dev: true
+
+  /webpack-hot-middleware@2.25.4:
+    resolution: {integrity: sha512-IRmTspuHM06aZh98OhBJtqLpeWFM8FXJS5UYpKYxCJzyFoyWj1w6VGFfomZU7OPA55dMLrQK0pRT1eQ3PACr4w==}
+    dependencies:
+      ansi-html-community: 0.0.8
+      html-entities: 2.4.0
+      strip-ansi: 6.0.1
     dev: true
 
   /webpack-merge@5.9.0:

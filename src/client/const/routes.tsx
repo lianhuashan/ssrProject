@@ -6,7 +6,7 @@ import Login from '../views/Login';
 import type { RouteObject } from 'react-router-dom';
 import ErrorBoudary from '../errorHandler/ErrorBoudary';
 import axios from '../request';
-import type { IndexCategory } from '../types';
+import type { IndexCategory, ResType } from '../types';
 const routes: RouteObject[] = [
   {
     path: '/',
@@ -19,8 +19,7 @@ const routes: RouteObject[] = [
         console.log('error coming', e?.message);
       } finally {
       }
-      console.log('fetch finished', res?.data);
-      return res?.data || null;
+      return res?.data.data || null;
     }
   },
   { path: '/book/info', element: <BookInfo /> },

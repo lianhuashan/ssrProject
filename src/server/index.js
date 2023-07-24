@@ -1,55 +1,52 @@
 const express = require('express');
-const { renderToString, renderToPipeableStream } = require('react-dom/server');
 const proxy = require('express-http-proxy');
 const bodyParser = require('body-parser');
 const app = express();
 
 import { render } from '../client/views/app/Server';
 
-//todo 直接路由到服务器根目录怎么实现
 app.use(express.static('public'));
 
 app.use(
   '/api',
   proxy('http://127.0.0.1:3001', {
     proxyReqPathResolver(req) {
-      console.log('llllllll', '/api' + req.path);
       return '/api' + req.path;
     }
   })
 );
 
-// app.use(bodyParser.json());
-// const content = renderToString(<Home />);
-// app.get('*', function (req, res) {
-//   res.set('content-type', 'text/html');
-//   res.sendFile('index.html');
-// });
+console.log(process.env);
+(function () {
+  // Step 1: Create & configure a webpack compiler
+  var webpack = require('webpack');
+  var webpackConfig = require(process.env.WEBPACK_CONFIG ? process.env.WEBPACK_CONFIG : '../../config/webpack.client');
+  var compiler = webpack(webpackConfig);
+
+  // Step 2: Attach the dev middleware to the compiler & the server
+  app.use(
+    require('webpack-dev-middleware')(compiler, {
+      publicPath: webpackConfig.output.publicPath
+    })
+  );
+
+  // Step 3: Attach the hot middleware to the compiler & the server
+  app.use(
+    require('webpack-hot-middleware')(compiler, {
+      log: console.log,
+      path: '/__webpack_hmr',
+      heartbeat: 10 * 1000
+    })
+  );
+})();
 
 app.get('*', async (req, res) => {
-  // const { pipe } = renderToPipeableStream(<ServerApp request={req} />, {
-  //   bootstrapScripts: ['./static/index.js'],
-  //   onShellReady: function () {
-  //     res.set('Content-Type', 'text/html');
-  //     pipe(res);
-  //   },
-  //   onShellError: function () {
-  //     res.sendStatus(500);
-  //   }
-  // });
-  // console.log('req /', req.path);
-  console.log('====================================');
-  console.log(req.path);
-  console.log('====================================');
-  const content = await render(req);
-  // console.log('====================================');
-  // console.log(content);
-  // console.log('====================================');
-  // // res.send('hello');
+  const [content, styleTags] = await render(req);
   res.set('Content-Type', 'text/html');
   res.send(`<html>
   <head>
   <title>hello</title>
+  ${styleTags}
   </head>
   <body>
    <div id="root">${content}</div>

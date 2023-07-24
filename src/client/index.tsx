@@ -10,5 +10,9 @@ if (typeof document !== undefined) {
   const root = hydrateRoot(document.getElementById('root')!, <ClientApp />);
 }
 
+if (module?.hot) {
+  module?.hot?.accept();
+}
+
 // const root = createRoot(document.getElementById('root')!);
 // root.render(<ClientApp />);

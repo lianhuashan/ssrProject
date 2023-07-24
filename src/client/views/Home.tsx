@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import HomeNavBar from '../components/HomeNavBar';
 import Footer from '../components/Footer';
 import Counter from '../components/Counter';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import axios from '../request';
 import { IndexCategory } from '../types';
 
@@ -24,7 +24,7 @@ const Wrapper = styled.div`
     flex-wrap: wrap;
   }
   .category-title-img {
-    width: 150px;
+    width: 180px;
     height: 32px;
   }
   .category-title-desp {
@@ -60,20 +60,23 @@ const Home = () => {
       });
     }
   }, [loaderData]);
-  console.log('data', data);
   return (
     <Wrapper>
       <HomeNavBar />
       {data?.topCategories?.map((topCategory) => (
-        <div>
+        <div key={topCategory.CategoryId}>
           <div className="category-title flex-row-box">
-            <img data-src={topCategory.ranklistCover?.chart_title} />
+            <img
+              data-src={topCategory.ranklistCover?.chart_title}
+              src={topCategory.ranklistCover?.chart_title}
+              className="category-title-img"
+            />
             <span>{topCategory.ranklistCover?.desc}</span>
           </div>
           <div className="book-cover-list flex-col-box">
             {topCategory.lectureBooks?.slice(0, 6).map((lectureBook, index) => (
-              <div className="book-cover flex-row-box">
-                <img data-src={lectureBook.bookInfo?.cover} className="book-cover-img"></img>
+              <div className="book-cover flex-row-box" key={index}>
+                <img data-src={lectureBook.bookInfo?.cover} src={lectureBook.bookInfo?.cover} className="book-cover-img"></img>
                 <div className="flex-row-box">
                   <div className="book-cover-order">{index + 1}</div>
                   <div className="flex-col-box">

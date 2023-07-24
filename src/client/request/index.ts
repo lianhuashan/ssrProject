@@ -1,5 +1,5 @@
 import axios from 'axios';
-const baseUrl = 'http://127.0.0.1:5000/api';
+const baseUrl = 'http://localhost:5000/api';
 export default axios.create({
   baseURL: baseUrl,
   timeout: 1000

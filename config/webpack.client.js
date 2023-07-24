@@ -36,7 +36,6 @@ const clientConfig = {
       }
     ]
   }
-  // devServer: { static: {} }
 
   // devServer: {
   //   historyApiFallback: true,
