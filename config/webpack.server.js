@@ -9,12 +9,13 @@ const config = require('./webpack.base');
 const serverConfig = {
   target: 'node',
   mode: 'development',
-  entry: './src/server/index.js',
-
+  entry: './src/server/index',
   externals: [nodeExternals()],
+  devtool: 'source-map',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, '..', 'build')
+    path: path.resolve(__dirname, '..', 'build'),
+    publicPath: '/public/assets/'
   }
 };
 

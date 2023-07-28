@@ -18,7 +18,7 @@ const StyledUl = styled.ul`
   line-height: 44px;
   color: #fafafa;
   text-align: right;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   > li {
     list-style: none;
     margin-right: 36px;
@@ -41,10 +41,10 @@ export default () => {
           <StyledLink to="/category">墨水屏版</StyledLink>
         </li>
         <li>
-          <StyledLink to="/category">手机版</StyledLink>
+          <StyledLink to="/">手机版</StyledLink>
         </li>
         <li>
-          <StyledLink to="/category">登录</StyledLink>
+          <StyledLink to="/">登录</StyledLink>
         </li>
       </StyledUl>
     </>

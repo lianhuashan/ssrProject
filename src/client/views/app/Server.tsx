@@ -5,20 +5,13 @@ import { StaticRouterProvider, createStaticHandler, createStaticRouter } from 'r
 import store from '../../store';
 import { Provider as ReduxProvider } from 'react-redux';
 import express from 'express';
-import { GlobalStyle } from './Client';
+import { GlobalStyle } from '../../style/index';
 import { ServerStyleSheet } from 'styled-components';
 let { query, dataRoutes } = createStaticHandler(routes);
 
 export const render = async (request: express.Request) => {
   let remixRequest = createFetchRequest(request);
   let context = await query(remixRequest);
-  // try {
-  //   remixRequest = createFetchRequest(request);
-  //   context = await query(remixRequest);
-  // } catch (e) {
-  //   console.log('query is error');
-  //   console.log(e.message);
-  // }
 
   if (context instanceof Response) {
     throw context;

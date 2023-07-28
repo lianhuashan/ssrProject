@@ -1,19 +1,19 @@
 {
   "compilerOptions": {
-    "target": "ES2015",
+    "target": "ES5",
     "module": "ESNext",
     "typeRoots": [
-      "./types",
+      "types",
       "**/**/types",
-      "node_modules/@types"
+      "./node_modules/@types"
     ],
     "allowJs": true,
     "checkJs": true,
     "jsx": "preserve",
     "declaration": true,
     "sourceMap": true,
-    "outDir": "./dist/es",
-    "rootDir": "./src",
+    "outDir": "./public/es",
+    "rootDir": "./",
     "strict": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
@@ -22,13 +22,16 @@
     "emitDecoratorMetadata": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": false,
+    "noEmit": true,
     "allowImportingTsExtensions": false,
   },
   "include": [
-    "src/**/*"
+    "./"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "./config",
+    "./build",
+    "./public"
   ]
 }

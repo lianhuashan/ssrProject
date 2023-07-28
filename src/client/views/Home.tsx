@@ -7,47 +7,96 @@ import Counter from '../components/Counter';
 import styled, { createGlobalStyle } from 'styled-components';
 import axios from '../request';
 import { IndexCategory } from '../types';
+import SearchBar from '../components/SearchBar';
 
 const Wrapper = styled.div`
   background-color: rgba(0, 0, 0, 0.1);
-  .flex-row-box {
+
+  .top-category {
+    width: 80%;
+    margin: 0 auto;
+    background: hsla(0, 0%, 0%, 0.9);
+    padding: 0 50px;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .flex-col-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    .category-block {
+      width: 50%;
+      /* max-width: 600px; */
+      margin-top: 30px;
+    }
   }
   .category-title-img {
-    width: 180px;
+    width: 240px;
     height: 32px;
   }
   .category-title-desp {
     font-size: 12px;
+    display: block;
+    margin-top: 4px;
+  }
+
+  .book-cover-list {
+    margin-top: 20px;
+    max-height: 300px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
 
   .book-cover {
     font-size: 14px;
     margin-bottom: 20px;
+    max-width: 240px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
 
     &-img {
-      width: 40px;
-      height: 60px;
+      min-width: 60px;
+      height: 80px;
     }
-    &-order,
-    &-title {
-      color: #fff;
+    &-order {
+      font-weight: 700;
     }
-    &-author {
-      color: #cacaca;
+    &-intro,
+    &-order {
+      margin-left: 12px;
+    }
+
+    &-intro {
+      div:first-of-type {
+        margin-bottom: 4px;
+      }
+    }
+  }
+
+  .category {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 50px;
+    h2 {
+      margin-top: 30px;
+      font-size: 18px;
+    }
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &-list-item {
+      margin-top: 30px;
+      width: 33.3%;
+      display: block;
     }
   }
 `;
+
+const keywords = ['飙升', '新书', '总榜', '神作榜'];
 
 const Home = () => {
   const loaderData = useLoaderData();
@@ -63,33 +112,50 @@ const Home = () => {
   return (
     <Wrapper>
       <HomeNavBar />
-      {data?.topCategories?.map((topCategory) => (
-        <div key={topCategory.CategoryId}>
-          <div className="category-title flex-row-box">
-            <img
-              data-src={topCategory.ranklistCover?.chart_title}
-              src={topCategory.ranklistCover?.chart_title}
-              className="category-title-img"
-            />
-            <span>{topCategory.ranklistCover?.desc}</span>
-          </div>
-          <div className="book-cover-list flex-col-box">
-            {topCategory.lectureBooks?.slice(0, 6).map((lectureBook, index) => (
-              <div className="book-cover flex-row-box" key={index}>
-                <img data-src={lectureBook.bookInfo?.cover} src={lectureBook.bookInfo?.cover} className="book-cover-img"></img>
-                <div className="flex-row-box">
-                  <div className="book-cover-order">{index + 1}</div>
-                  <div className="flex-col-box">
-                    <span className="book-cover-title">{lectureBook.bookInfo?.title}</span>
-                    <span className="book-cover-author">{lectureBook.bookInfo?.author}</span>
-                  </div>
-                </div>
+      <SearchBar />
+      <div className="top-category">
+        {data?.topCategories
+          ?.filter((item) => item.title && new RegExp(keywords.join('|')).test(item.title))
+          .map((topCategory) => (
+            <div key={topCategory.CategoryId} className="category-block">
+              <div className="category-title">
+                <img
+                  data-src={topCategory.ranklistCover?.chart_title}
+                  src={topCategory.ranklistCover?.chart_title}
+                  className="category-title-img"
+                />
+                <span className="category-title-desp  text-multi-line-ellipsis">{topCategory.ranklistCover?.desc}</span>
               </div>
+              <div className="book-cover-list flex-col-box">
+                {topCategory.lectureBooks?.slice(0, 6).map((lectureBook, index) => (
+                  <div className="book-cover" key={index}>
+                    <img data-src={lectureBook.bookInfo?.cover} src={lectureBook.bookInfo?.cover} className="book-cover-img"></img>
+                    <div className="book-cover-order">{index + 1}</div>
+                    <div className="book-cover-intro">
+                      <div className="text-title text-multi-line-ellipsis">{lectureBook.bookInfo?.title}</div>
+                      <div className="text-sub-title">{lectureBook.bookInfo?.author}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <a className="category-show-all text-title text-gray">查看全部 </a>
+            </div>
+          ))}
+      </div>
+      <div className="category">
+        <h2>分类榜单</h2>
+        <div className="category-list">
+          {data?.categories
+            ?.filter((item) => item.parentCategoryId === '0')
+            ?.slice(0, 11)
+            ?.map((item) => (
+              <a className="category-list-item" key={item.title}>
+                <span>{item.title}</span>&nbsp;.&nbsp;<span>{item.totalCount}本</span>
+              </a>
             ))}
-          </div>
+          <a className="category-list-item">查看全部&nbsp;.&nbsp;{data.categories?.length}个</a>
         </div>
-      ))}
-      <Footer />
+      </div>
     </Wrapper>
   );
 };

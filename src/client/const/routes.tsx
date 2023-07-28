@@ -6,7 +6,7 @@ import Login from '../views/Login';
 import type { RouteObject } from 'react-router-dom';
 import ErrorBoudary from '../errorHandler/ErrorBoudary';
 import axios from '../request';
-import type { IndexCategory, ResType } from '../types';
+import type { IndexCategory } from '../types';
 const routes: RouteObject[] = [
   {
     path: '/',
@@ -15,8 +15,7 @@ const routes: RouteObject[] = [
       let res = null;
       try {
         res = await axios.get<ResType<IndexCategory>>('/v1/index');
-      } catch (e) {
-        console.log('error coming', e?.message);
+      } catch (e: any) {
       } finally {
       }
       return res?.data.data || null;

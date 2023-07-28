@@ -3,16 +3,22 @@ const { merge } = require('webpack-merge');
 const config = require('./webpack.base');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true';
+
 /**
  * @type {import('webpack').Configuration}
  */
+
 const clientConfig = {
   mode: 'development',
-  entry: './src/client/index.tsx',
+  entry: [hotMiddlewareScript, './src/client/index.tsx'],
   output: {
     filename: 'index.js',
-    path: path.resolve(__dirname, '..', 'public')
+    path: path.resolve(__dirname, '..', 'public'),
+    publicPath: '/public/assets/'
   },
+  devtool: 'eval-cheap-module-source-map',
+  plugins: [new webpack.HotModuleReplacementPlugin()],
   module: {
     rules: [
       {
