@@ -26,9 +26,9 @@ function useHMR() {
     webpackDevMid(compiler, {
       publicPath: webpackConfig.output.publicPath,
       serverSideRender: true,
-      writeToDisk: false,
+      writeToDisk: true
       // index: '',
-      mimeTypeDefault: 'text/html'
+      // mimeTypeDefault: 'text/html'
     })
   );
 
@@ -37,30 +37,30 @@ function useHMR() {
     webpackHotMid(compiler, {
       log: console.log,
       path: '/__webpack_hmr',
-      heartbeat: 10 * 100
+      heartbeat: 10 * 1000
     })
   );
 
   // The following middleware would not be invoked until the latest build is finished.
-  //   app.use((req, res) => {
-  //     const { devMiddleware } = res.locals.webpack;
-  //     const outputFileSystem = devMiddleware.outputFileSystem;
-  //     const jsonWebpackStats = devMiddleware.stats.toJson();
-  //     const { assetsByChunkName, outputPath } = jsonWebpackStats;
-  //     console.log('--------------');
-  //     console.log(JSON.stringify(assetsByChunkName.main));
-  //     console.log('--------------');
+  // app.use((req, res) => {
+  //   const { devMiddleware } = res.locals.webpack;
+  //   const outputFileSystem = devMiddleware.outputFileSystem;
+  //   const jsonWebpackStats = devMiddleware.stats.toJson();
+  //   const { assetsByChunkName, outputPath } = jsonWebpackStats;
+  //   console.log('--------------');
+  //   console.log(JSON.stringify(assetsByChunkName.main));
+  //   console.log('--------------');
 
-  //     // Then use `assetsByChunkName` for server-side rendering
-  //     // For example, if you have only one main chunk:
-  //     res.send(`
+  //   // Then use `assetsByChunkName` for server-side rendering
+  //   // For example, if you have only one main chunk:
+  //   res.send(`
   // <html>
   //   <head>
   //     <title>My App</title>
   //     <style>
   //     ${normalizeAssets(assetsByChunkName.main)
   //       .filter((path) => path.endsWith('.css'))
-  //       .map((path) => outputFileSystem.readFileSync(path.join(outputPath, path)))
+  //       .map((p) => outputFileSystem.readFileSync(path.join(outputPath, p)))
   //       .join('\n')}
   //     </style>
   //   </head>
@@ -73,7 +73,7 @@ function useHMR() {
   //   </body>
   // </html>
   //   `);
-  //   });
+  // });
 }
 
 app.use(express.static('public'));
@@ -89,13 +89,15 @@ app.use(
 
 useHMR();
 
-app.get('*', async (req, res) => {
-  const [content, styleTags] = await render(req);
+app.get('/', async (req, res) => {
+  console.log('get *');
+  const content = await render(req);
+
   res.set('Content-Type', 'text/html');
   res.send(`<html>
   <head>
   <title>hello</title>
-  ${styleTags}
+  <link rel="stylesheet" href="main.css" />
   </head>
   <body>
    <div id="root">${content}</div>
@@ -103,6 +105,6 @@ app.get('*', async (req, res) => {
   </body>
   </html>`);
 });
-app.listen(5000, () => {
-  console.log('server start on 5000');
+app.listen(5001, () => {
+  console.log('server start on 5001');
 });

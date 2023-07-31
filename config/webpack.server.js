@@ -15,7 +15,7 @@ const serverConfig = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, '..', 'build'),
-    publicPath: '/public/assets/'
+    publicPath: 'http://localhost:5001/public'
   }
 };
 

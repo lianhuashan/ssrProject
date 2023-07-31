@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { hydrateRoot } from 'react-dom/client';
 import ClientApp from './views/app/Client';
-
 // const App = () => {
 //   const router = createBrowserRouter(routes);
 //   return <RouterProvider router={router}></RouterProvider>;

@@ -3,7 +3,6 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import routes from '../../const/routes';
 import { Provider as ReduxProvider } from 'react-redux';
 import store from '../../store';
-import { GlobalStyle } from '../../style/index';
 
 const App = () => {
   const preLoadedState = (window as any)?.__PRE_LOAD_STATE__;
@@ -11,7 +10,6 @@ const App = () => {
 
   return (
     <React.StrictMode>
-      <GlobalStyle />
       <ReduxProvider store={store} serverState={preLoadedState}>
         <RouterProvider router={router} />
       </ReduxProvider>

@@ -18,7 +18,7 @@ const routes: RouteObject[] = [
       } catch (e: any) {
       } finally {
       }
-      return res?.data.data || null;
+      return res?.data.data || {};
     }
   },
   { path: '/book/info', element: <BookInfo /> },

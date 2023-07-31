@@ -5,7 +5,6 @@ import { StaticRouterProvider, createStaticHandler, createStaticRouter } from 'r
 import store from '../../store';
 import { Provider as ReduxProvider } from 'react-redux';
 import express from 'express';
-import { GlobalStyle } from '../../style/index';
 import { ServerStyleSheet } from 'styled-components';
 let { query, dataRoutes } = createStaticHandler(routes);
 
@@ -18,26 +17,19 @@ export const render = async (request: express.Request) => {
   }
 
   let router = createStaticRouter(dataRoutes, context);
-  let sheet, htmlStr, styleTags;
+  let htmlStr, styleTags;
   try {
-    sheet = new ServerStyleSheet();
     htmlStr = renderToString(
-      sheet.collectStyles(
-        <React.StrictMode>
-          <GlobalStyle />
-          <ReduxProvider store={store}>
-            <StaticRouterProvider router={router} context={context} nonce="the-nonce" />
-          </ReduxProvider>
-        </React.StrictMode>
-      )
+      <React.StrictMode>
+        <ReduxProvider store={store}>
+          <StaticRouterProvider router={router} context={context} nonce="the-nonce" />
+        </ReduxProvider>
+      </React.StrictMode>
     );
-    styleTags = sheet.getStyleTags();
   } catch (e) {
-    styleTags = [];
   } finally {
-    sheet?.seal();
   }
-  return [htmlStr, styleTags];
+  return htmlStr;
 };
 
 export function createFetchRequest(req: express.Request): Request {

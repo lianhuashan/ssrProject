@@ -15,33 +15,10 @@ const clientConfig = {
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, '..', 'public'),
-    publicPath: '/public/assets/'
+    publicPath: 'http://localhost:5001/public/'
   },
-  devtool: 'eval-cheap-module-source-map',
-  plugins: [new webpack.HotModuleReplacementPlugin()],
-  module: {
-    rules: [
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource'
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: 'asset/resource'
-      },
-      {
-        test: /\.s[ac]ss$/i,
-        use: [
-          // Creates `style` nodes from JS strings
-          'style-loader',
-          // Translates CSS into CommonJS
-          'css-loader',
-          // Compiles Sass to CSS
-          'sass-loader'
-        ]
-      }
-    ]
-  }
+  devtool: 'source-map',
+  plugins: [new webpack.HotModuleReplacementPlugin()]
 
   // devServer: {
   //   historyApiFallback: true,
