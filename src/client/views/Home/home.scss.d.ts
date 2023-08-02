@@ -1,18 +1,27 @@
 declare namespace HomeScssNamespace {
   export interface IHomeScss {
-    'book-cover': string;
-    'book-cover-img': string;
-    'book-cover-intro': string;
-    'book-cover-list': string;
-    'book-cover-order': string;
-    category: string;
-    'category-block': string;
-    'category-list': string;
-    'category-list-item': string;
-    'category-title-desp': string;
-    'category-title-img': string;
-    'top-category': string;
-    wrapper: string;
+    'category-container': string;
+    'category-detail-head': string;
+    'category-detail-item': string;
+    'category-detail-items-container': string;
+    'flex-col-box': string;
+    'flex-row-box': string;
+    'small-text': string;
+    'text-ellipsis': string;
+    'text-gray': string;
+    'text-multi-line-ellipsis': string;
+    'text-sub-title': string;
+    'text-title': string;
+    'top-book-container': string;
+    'top-book-item': string;
+    'top-book-item-cover': string;
+    'top-book-item-intro': string;
+    'top-book-item-order': string;
+    'top-category-container': string;
+    'top-category-head-desp': string;
+    'top-category-head-title': string;
+    'top-category-item': string;
+    'top-category-show-all': string;
   }
 }
 

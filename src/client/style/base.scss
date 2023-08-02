@@ -1,0 +1,84 @@
+$black-0: rgba(0, 0, 0);
+$black-1: #111213;
+$black-2: rgba(0, 0, 0, 0.03);
+$black-6: #8a8c90;
+$black-7: #b2b4b8;
+$black-9: #eef0f4;
+
+$blue-0: #2493ee;
+
+$color-pink: #ff4593;
+$color-orange: #ffb341;
+$color-blue: #39cfff;
+$color-yellow: #e8b142;
+
+$font-primary-color: $black-9;
+$font-secondary-color: $black-6;
+$font-hilight-color: $black-7;
+$font-link-color: $black-7;
+$bg-primary-color: $black-0;
+$bg-secondary-color: $black-1;
+$bg-hilight-color: $black-2;
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+html,
+body {
+  background: $bg-primary-color;
+  color: $font-primary-color;
+  font-family: 'PingFang SC,-apple-system,SF UI Text,Lucida Grande,STheiti,Microsoft YaHei,sans-serif';
+}
+.flex-row-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.flex-col-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.text-ellipsis {
+  word-wrap: nowrap;
+  white-space: break-all;
+  text-overflow: ellipsis;
+}
+
+.text-multi-line-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.text-title {
+  font-size: 14px;
+  color: $font-primary-color;
+}
+.text-sub-title {
+  font-size: 12px;
+  color: $font-secondary-color;
+}
+.small-text {
+  font-size: 12px;
+}
+
+.text-gray {
+  color: $font-secondary-color;
+}
+
+@font-face {
+  font-family: 'DIN Medium';
+  src: url('/src/assets/fonts/DIN-Medium-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SourceHanSerifCN-Bold';
+  src: url('/src/assets/fonts/SourceHanSerifCN-Bold.otf') format('opentype');
+}

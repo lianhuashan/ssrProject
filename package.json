@@ -5,10 +5,10 @@
   "main": "index.js",
   "types": "./types/index.d.ts",
   "scripts": {
-    "dev": "npm-run-all --parallel dev:**",
-    "dev:build:start": "nodemon --watch ./build node ./build/bundle.js",
-    "dev:build:client": "webpack --config ./config/webpack.client.js --watch",
-    "dev:build:server": "webpack --config ./config/webpack.server.js --watch"
+    "dev": "npm-run-all --parallel dev:build:* --sequential dev:start",
+    "dev:start": "nodemon --watch ./build node ./build/bundle.js",
+    "dev:build:client": "rimraf ./public && webpack --config ./config/webpack.client.js",
+    "dev:build:server": "rimraf ./build && webpack --config ./config/webpack.server.js"
   },
   "repository": {
     "type": "git",
@@ -59,6 +59,7 @@
     "mini-css-extract-plugin": "^2.7.6",
     "postcss": "^8.4.27",
     "postcss-loader": "^7.3.3",
+    "rimraf": "^5.0.1",
     "sass": "^1.64.0",
     "sass-loader": "^13.3.2",
     "source-map-loader": "^4.0.1",
