@@ -2,6 +2,7 @@ declare namespace BaseScssNamespace {
   export interface IBaseScss {
     'flex-col-box': string;
     'flex-row-box': string;
+    'link-more-icon': string;
     'small-text': string;
     'text-ellipsis': string;
     'text-gray': string;

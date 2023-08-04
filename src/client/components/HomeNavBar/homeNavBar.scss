@@ -1,10 +1,12 @@
-@use '../../style/base.scss';
+@use '../../style/vars.scss';
+@use '../../style/mixins.scss';
+
 .wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background: base.$bg-secondary-color;
+  background: vars.$bg-secondary-color;
   height: 386px;
 }
 
@@ -13,17 +15,23 @@ ul {
   max-width: 1200px;
   display: inline-flex;
   justify-content: flex-end;
+  align-items: center;
   height: 72px;
-  line-height: 72px;
-  background: base.$bg-secondary-color;
-  > li {
+  background: vars.$bg-secondary-color;
+
+  >li {
     list-style: none;
     margin-right: 36px;
+  }
 
-    li:has(+ li):after {
-      content: '|';
-      color: #fafafa;
-      margin-left: 15px;
+  li+li {
+
+    // border-left: 1px solid vars.$font-link-color;
+    @include mixins.border-1px(vars.$font-link-color, 'border-left') {
+      width: 32px;
+      height: 32;
+      left: -18px;
+      top: 4px;
     }
   }
 }
@@ -31,9 +39,10 @@ ul {
 .link {
   text-decoration: none;
   font-size: 14px;
-  color: base.$font-secondary-color;
+  color: vars.$font-secondary-color;
+
   &:hover {
-    color: base.$font-hilight-color;
+    color: vars.$font-hilight-color;
   }
 }
 
@@ -45,34 +54,48 @@ ul {
 h1 {
   margin-top: 70px;
 }
-.search-wrapper {
-  margin-top: 12px;
+
+.search {
+  @include mixins.search;
 }
 
-.search-input {
-  width: 700px;
-  height: 52px;
-  box-sizing: border-box;
-  padding: 0 52px;
-  border-radius: 25px;
-  background: rgba(238, 240, 244, 0.1);
+
+.qrcode-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.search-icon-left {
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  margin-right: -52px;
-  background: url('../../../assets/search_magnifier.png');
-  transform: translateX(-50%);
+
+
+.qrcode-outer {
+  padding: 50px 0 32px;
+  width: 280px;
+  height: 240px;
+  color: #fff;
+  background-color: rgba(50, 50, 50, .8);
+  border-radius: 10px;
+  position: relative;
+
+  // margin-top: 50%;
+  // transform: translateY(-50%);
+  .close-btn {
+    @include mixins.close-btn
+  }
+
 }
 
-.search-icon-right {
-  width: 32px;
-  height: 32px;
-  display: inline-block;
-  border-radius: 50%;
-  margin-left: -52px;
-  background: url('../../../assets/search_return.png');
-  transform: translateX(50%);
+
+
+.qrcode {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+
+  &-status-text {
+    line-height: 60px;
+    text-align: center;
+  }
 }

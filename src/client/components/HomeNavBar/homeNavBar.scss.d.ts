@@ -1,19 +1,16 @@
 declare namespace HomeNavBarScssNamespace {
   export interface IHomeNavBarScss {
-    'flex-col-box': string;
-    'flex-row-box': string;
+    'close-btn': string;
     link: string;
     logo: string;
+    qrcode: string;
+    'qrcode-outer': string;
+    'qrcode-status-text': string;
+    'qrcode-wrapper': string;
     'search-icon-left': string;
     'search-icon-right': string;
     'search-input': string;
     'search-wrapper': string;
-    'small-text': string;
-    'text-ellipsis': string;
-    'text-gray': string;
-    'text-multi-line-ellipsis': string;
-    'text-sub-title': string;
-    'text-title': string;
     wrapper: string;
   }
 }

@@ -1,0 +1,83 @@
+@use './vars.scss';
+
+@mixin border-1px($color: vars.$font-secondary-color, $border: 'border-bottom') {
+  @debug "the color is #{$color} , the border is #{$border}";
+  position: relative;
+  z-index: 2;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    #{$border}: 1px solid #{$color};
+    transform: scale(0.5);
+    transform-origin: 0 0;
+    z-index: 1;
+    @content;
+  }
+}
+
+@mixin close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 20px;
+  height: 20px;
+  background: center/contain url(/src/assets/dialog_close.png);
+}
+
+@mixin search {
+  &-wrapper {
+    margin-top: 32px;
+    position: relative;
+  }
+
+  &-input {
+    width: 700px;
+    height: 52px;
+    box-sizing: border-box;
+    padding: 0 52px;
+    border-radius: 25px;
+    background: rgba(238, 240, 244, 0.1);
+    border: none;
+    caret-color: vars.$font-primary-color;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+
+  }
+
+  &-icon {
+
+    &-left,
+    &-right {
+      position: absolute;
+    }
+
+    &-left {
+      width: 20px;
+      height: 100%;
+      display: inline-block;
+      background: center/contain no-repeat url('../../../assets/search_magnifier.png');
+      transform: translateX(-50%);
+      left: 30px;
+    }
+
+    &-right {
+      width: 32px;
+      height: 32px;
+      display: inline-block;
+      border-radius: 50%;
+      background: url('../../../assets/search_return.png');
+      transform: translateX(50%);
+      right: 32px;
+      top: 8px
+    }
+  }
+}

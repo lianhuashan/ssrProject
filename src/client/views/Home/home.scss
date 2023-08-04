@@ -1,36 +1,47 @@
 @use '../../style/base';
+@use '../../style/mixins.scss';
+@use '../../style/vars.scss';
 
 .category-container {
   max-width: 1200px;
   margin: 0 auto;
 }
+
 .top-category-container {
+  padding: 12px;
+  box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
+
 .top-category {
   &-item {
     width: 50%;
     margin-top: 30px;
   }
+
   &-head {
     &-title {
       width: 240px;
       height: 32px;
     }
+
     &-desp {
       font-size: 12px;
       display: block;
       margin-top: 8px;
     }
   }
+
   &-show-all {
     cursor: pointer;
+
     &:hover {
-      color: base.$font-hilight-color;
+      color: vars.$font-hilight-color;
     }
+
     &::after {
       content: '';
       display: inline-block;
@@ -55,19 +66,22 @@
 .top-book-item {
   width: 282px;
   height: 124px;
+  padding: 0 12px;
   box-sizing: border-box;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   cursor: pointer;
+
   &:hover {
-    background-color: #000;
+    background-color: vars.$bg-hilight-color;
   }
 
   &-cover {
     width: 64px;
     height: 92px;
   }
+
   &-order {
     font-family:
       'DIN Medium',
@@ -79,6 +93,7 @@
       Microsoft YaHei,
       sans-serif;
   }
+
   &-intro,
   &-order {
     margin-left: 12px;
@@ -93,17 +108,49 @@
 
 .category-detail {
   &-head {
-    margin-top: 30px;
-    font-size: 18px;
-    font-family: 'SourceHanSerifCN-Bold';
+    padding: 12px;
+    box-sizing: border-box;
+    height: 70px;
+    line-height: 70px;
+    font-size: 20px;
+    font-family: 'SourceHanSerifCN-Bold', PingFang SC, -apple-system, SF UI Text, Lucida Grande, STheiti, Microsoft YaHei, sans-serif;
   }
+
   &-items-container {
     display: flex;
     flex-wrap: wrap;
   }
+
   &-item {
-    margin-top: 30px;
-    width: 33.3%;
+    height: 60px;
+    line-height: 60px;
+    width: 25%;
     display: block;
+    padding: 0 12px;
+    box-sizing: border-box;
+    color: vars.$font-primary-color;
+    font-family: 'DIN Regular', PingFang SC, -apple-system, SF UI Text, Lucida Grande, STheiti, Microsoft YaHei, sans-serif;
+
+    &:hover {
+      background-color: vars.$bg-hilight-color;
+      color: #eef0f4;
+    }
   }
+}
+
+.connector-circle {
+  display: inline-block;
+  padding: 0 4px;
+  vertical-align: middle;
+}
+
+.copyright {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 12px;
+  line-height: 24px;
+  color: vars.$font-secondary-color;
+  @include mixins.border-1px();
+
 }

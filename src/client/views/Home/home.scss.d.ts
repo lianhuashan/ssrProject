@@ -4,8 +4,11 @@ declare namespace HomeScssNamespace {
     'category-detail-head': string;
     'category-detail-item': string;
     'category-detail-items-container': string;
+    'connector-circle': string;
+    copyright: string;
     'flex-col-box': string;
     'flex-row-box': string;
+    'link-more-icon': string;
     'small-text': string;
     'text-ellipsis': string;
     'text-gray': string;

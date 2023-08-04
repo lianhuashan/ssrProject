@@ -72,12 +72,27 @@ const Home = () => {
               ?.filter((item) => item.parentCategoryId === '0')
               ?.slice(0, 11)
               ?.map((item) => (
-                <a className={styles['category-detail-item']} key={item.title}>
-                  <span>{item.title}</span>&nbsp;.&nbsp;<span>{item.totalCount}本</span>
+                <a className={styles['category-detail-item']} key={item.title} onClick={() => {}}>
+                  <span>{item.title}</span>
+                  <span className={styles['connector-circle']}>.</span>
+                  <span>{item.totalCount}本</span>
                 </a>
               ))}
-            <a className={styles['category-detail-item']}>查看全部&nbsp;.&nbsp;{data.categories?.length}个</a>
+            <a className={styles['category-detail-item']}>
+              查看全部<span className={styles['connector-circle']}>.</span>
+              {data.categories?.length}个<span className={globalStyles['link-more-icon']}></span>
+            </a>
           </div>
+        </div>
+      </div>
+      <div className={styles.copyright}>
+        <div>Copyright © 1998 - 2023 Tencent. All Rights Reserved</div>
+        <div>
+          <a href="/">用户协议</a>
+          <span className={styles['connector-circle']}>.</span>
+          <a href="/">隐私政策</a>
+          <span className={styles['connector-circle']}>.</span>
+          <a href="/">帮助与反馈</a>
         </div>
       </div>
     </div>
