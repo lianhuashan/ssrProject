@@ -8,7 +8,7 @@ const SearchMask = ({ visible, onMaskClick }: SearchMaskProps) => {
   const handleSearch = () => {};
   return (
     <Mask visible={visible}>
-      <div className={styles['search-wrapper']}>
+      <div className={styles['search-page']}>
         <a className={styles.header}></a>
         <div className={styles['search-wrapper']}>
           <span className={styles['search-icon-left']}></span>

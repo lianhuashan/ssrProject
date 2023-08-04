@@ -1,7 +1,7 @@
 @use '/src//client/style/mixins.scss';
 @use '/src/client/style/vars.scss';
 
-.search-wrapper {
+.search-page {
   @include mixins.close-btn;
   display: flex;
   flex-direction: column;
@@ -10,6 +10,10 @@
   >div+div {
     margin-top: 30px;
   }
+}
+
+.search {
+  @include mixins.search;
 }
 
 .header {

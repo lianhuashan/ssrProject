@@ -1,6 +1,10 @@
 declare namespace SearchMaskScssNamespace {
   export interface ISearchMaskScss {
     header: string;
+    'search-icon-left': string;
+    'search-icon-right': string;
+    'search-input': string;
+    'search-page': string;
     'search-wrapper': string;
   }
 }
