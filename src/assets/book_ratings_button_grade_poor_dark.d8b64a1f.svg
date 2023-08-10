@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>book_ratings_button_grade_poor</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon" transform="translate(1.000000, 3.000000)">
+            <path d="M2,6 C2,8.48528137 4.23857625,10.5 7,10.5 C9.76142375,10.5 12,8.48528137 12,6" stroke="#a0a0a2" stroke-width="2" transform="translate(7.000000, 8.250000) scale(1, -1) translate(-7.000000, -8.250000) "></path>
+            <circle fill="#a0a0a2" cx="2" cy="1.5" r="1.5"></circle>
+            <circle fill="#a0a0a2" cx="12" cy="1.5" r="1.5"></circle>
+        </g>
+    </g>
+</svg>

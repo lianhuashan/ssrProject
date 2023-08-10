@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './homeNavBar.scss';
 import Mask from '../common/Mask';
 import SearchMask from '../SearchMask';
+import NavUl from '../NavUl';
 
 export default () => {
   const [showLogin, setShowLogin] = useState<boolean>(false);
@@ -19,28 +20,7 @@ export default () => {
   };
   return (
     <div className={styles.wrapper}>
-      <ul>
-        <li>
-          <a className={styles.link} onClick={handleTransfer}>
-            传书到手机
-          </a>
-        </li>
-        <li>
-          <a className={styles.link} href="https://ink.qq.com/">
-            墨水屏版
-          </a>
-        </li>
-        <li>
-          <a className={styles.link} onClick={handleSwitchPhone}>
-            手机版
-          </a>
-        </li>
-        <li>
-          <a className={styles.link} onClick={handleLogin}>
-            登录
-          </a>
-        </li>
-      </ul>
+      <NavUl />
       <h1>
         <img
           className={styles.logo}
@@ -66,7 +46,7 @@ export default () => {
           </div>
         </div>
       </Mask>
-      <SearchMask visible={showSearch} onMaskClick={() => setShowSearch(false)} />
+      <SearchMask visible={showSearch} onMaskClick={() => setShowSearch(false)} onClose={() => setShowSearch(false)} />
     </div>
   );
 };

@@ -14,11 +14,11 @@ const routes: RouteObject[] = [
     loader: async () => {
       let res = null;
       try {
-        res = await axios.get<ResType<IndexCategory>>('/v1/index');
+        res = await axios.get<null, ResType<IndexCategory>>('/v1/index');
       } catch (e: any) {
       } finally {
       }
-      return res?.data.data || {};
+      return res?.data || {};
     }
   },
   { path: '/book/info', element: <BookInfo /> },

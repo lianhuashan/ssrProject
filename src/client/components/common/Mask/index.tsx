@@ -13,6 +13,7 @@ interface MaskProps {
   children?: ReactNode;
   style?: CSSProperties;
   container?: HTMLElement;
+  transparent?: boolean;
 }
 const Mask = ({
   container,
@@ -24,22 +25,49 @@ const Mask = ({
   onMaskClick,
   visible,
   stopPropgation,
+  transparent,
   children
 }: MaskProps) => {
   const [customStyle, setCustomStyle] = useState<CSSProperties>({
-    backgroundColor: color,
-    opacity: opacity,
-    display: visible ? 'block' : 'none'
+    display: visible ? 'block' : 'none',
+    ...(color
+      ? {
+          backgroundColor: color
+        }
+      : null),
+    ...(opacity
+      ? {
+          opacity: opacity
+        }
+      : null),
+    ...(typeof transparent !== 'undefined' ? { backdropFilter: !transparent ? "blur('60px')" : 'none' } : null),
+    ...style
   });
 
   const [innerVisible, setInnerVisible] = useState(visible);
 
   useEffect(() => {
-    setCustomStyle({ ...customStyle, backgroundColor: color, opacity: opacity, display: visible ? 'block' : 'none', ...style });
-  }, [color, opacity, visible, style]);
+    setCustomStyle({
+      ...customStyle,
+      display: visible ? 'block' : 'none',
+      ...(color
+        ? {
+            backgroundColor: color
+          }
+        : null),
+      ...(opacity
+        ? {
+            opacity: opacity
+          }
+        : null),
+      ...(typeof transparent !== 'undefined' ? { backdropFilter: !transparent ? 'blur(60px)' : 'none' } : null),
+      ...style
+    });
+  }, [color, opacity, visible, style, transparent]);
 
   useEffect(() => {
     if (disableBodyScroll && innerVisible) {
+      console.log('1111');
       window.document.body.style.overflow = 'hidden';
     } else {
       window.document.body.style.overflow = 'auto';

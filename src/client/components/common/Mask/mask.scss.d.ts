@@ -1,7 +1,7 @@
 declare namespace MaskScssNamespace {
   export interface IMaskScss {
     mask: string;
-    'mask-disable-body-scroll': string;
+    'mask-non-transparent': string;
   }
 }
 

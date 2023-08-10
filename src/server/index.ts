@@ -89,7 +89,7 @@ app.use(
 
 useHMR();
 
-app.get('/', async (req, res) => {
+app.get('*', async (req, res) => {
   console.log('get *');
   const content = await render(req);
 

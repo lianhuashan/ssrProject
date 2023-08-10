@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData, useRoutes } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import HomeNavBar from '../../components/HomeNavBar';
 import Footer from '../../components/Footer';
 import Counter from '../../components/Counter';
@@ -9,12 +9,13 @@ import axios from '../../request';
 import { IndexCategory } from '../../types';
 import styles from './home.scss';
 import globalStyles from '../../style/base.scss';
+
 const keywords = ['飙升', '新书', '总榜', '神作榜'];
 
 const Home = () => {
   const loaderData = useLoaderData();
   const [data, setData] = useState<IndexCategory>(loaderData as any);
-
+  const navigate = useNavigate();
   useEffect(() => {
     if (!loaderData) {
       axios('/v1/index').then((res: any) => {
@@ -44,7 +45,12 @@ const Home = () => {
                   </div>
                   <div className={`${styles['top-book-container']} ${globalStyles['flex-col-box']}`}>
                     {topCategory.lectureBooks?.slice(0, 6).map((lectureBook, index) => (
-                      <div className={styles['top-book-item']} key={index}>
+                      <div
+                        className={styles['top-book-item']}
+                        key={index}
+                        onClick={() => {
+                          navigate('/book/detail');
+                        }}>
                         <img
                           data-src={lectureBook.bookInfo?.cover}
                           src={lectureBook.bookInfo?.cover}

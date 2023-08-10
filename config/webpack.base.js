@@ -15,33 +15,48 @@ const babelOpts = {
   ],
   plugins: [['babel-plugin-styled-components']]
 };
-module.exports = {
+module.exports = (isServer = false) => ({
   module: {
     rules: [
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/[hash][ext][query]'
+          filename: 'assets/[hash][ext][query]',
+          emit: !isServer
         }
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset',
         generator: {
-          filename: 'assets/[hash][ext][query]'
+          filename: 'assets/[hash][ext][query]',
+          emit: !isServer
         }
       },
       {
         test: /\.s[ac]ss$/i,
         use: [
-          devMode ? 'style-loader' : { loader: MiniCssExtractPlugin.loader, options: { esModule: false, publicPath: './' } },
+          devMode
+            ? 'style-loader'
+            : {
+                loader: MiniCssExtractPlugin.loader,
+                options: { esModule: false, publicPath: './' }
+              },
           {
             loader: '@teamsupercell/typings-for-css-modules-loader'
           },
-          { loader: 'css-loader', options: { importLoaders: 1, modules: true } },
-          devMode ? { loader: 'postcss-loader', options: { postcssOptions: { plugins: ['autoprefixer'] } } } : null,
-          'sass-loader'
+          {
+            loader: 'css-loader',
+            options: { importLoaders: 1, modules: true }
+          },
+          {
+            loader: 'postcss-loader',
+            options: { postcssOptions: { plugins: ['autoprefixer'] } }
+          },
+          {
+            loader: 'sass-loader'
+          }
         ]
       },
       {
@@ -61,4 +76,4 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '...']
   }
-};
+});

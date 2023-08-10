@@ -102,3 +102,44 @@ export interface IndexCategory {
   isFetchRecommendBooks?: Boolean;
   bookInShelfData?: any;
 }
+
+export interface SearchTip {
+  keyword: string;
+  list: string[];
+  parts: string[];
+  records: SearchTipRecord[];
+}
+
+export interface SearchTipRecord {
+  categoryId: string;
+  totalCount: number;
+  type: number;
+  word: string;
+}
+
+export interface SearchBook {
+  bookInfo: BookInfo;
+  reading: number;
+  readingCount: number;
+  scope: number;
+
+  scopeCount: number;
+
+  searchIdx: number;
+
+  searchReport: number;
+  seq: number;
+
+  subscribeCount: number;
+
+  type: number;
+}
+export interface SearchResult {
+  books: SearchBook[];
+  correction: string;
+  hasMore: number;
+  parts: string[];
+  queryUid: string;
+  sid: string;
+  totalCount: number;
+}

@@ -1,7 +1,7 @@
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 const { merge } = require('webpack-merge');
-const config = require('./webpack.base');
+const getConfig = require('./webpack.base');
 /**
  * @type {import('webpack').Configuration}
  */
@@ -19,4 +19,4 @@ const serverConfig = {
   }
 };
 
-module.exports = merge(config, serverConfig);
+module.exports = merge(getConfig(true), serverConfig);

@@ -1,6 +1,6 @@
 const path = require('path');
 const { merge } = require('webpack-merge');
-const config = require('./webpack.base');
+const getConfig = require('./webpack.base');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true';
@@ -42,4 +42,4 @@ const clientConfig = {
   // plugins: [new HtmlWebpackPlugin({ title: 'ssr project', template: path.resolve(__dirname, '..', 'template.html') })]
 };
 
-module.exports = merge(config, clientConfig);
+module.exports = merge(getConfig(), clientConfig);

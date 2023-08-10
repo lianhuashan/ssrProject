@@ -2,23 +2,196 @@
 @use '/src/client/style/vars.scss';
 
 .search-page {
-  @include mixins.close-btn;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  position: relative;
 
   >div+div {
     margin-top: 30px;
   }
 }
 
-.search {
-  @include mixins.search;
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  background: center/contain no-repeat url('/src/assets/search_panel_close.png');
 }
 
+
+.search {
+  @include mixins.search;
+
+  &-icon {
+    &-left {
+      width: 24px;
+      background: center/contain no-repeat url('/src/assets/search_magnifier_focus.png');
+    }
+
+    &-right {
+      background: center/contain no-repeat url('/src/assets/search_return_hover.png');
+    }
+  }
+
+
+  &-input-dropdown {
+    width: 100%;
+    max-height: 320px;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background-color: #29292b;
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .2);
+    padding: 10px 0;
+    font-size: 14px;
+
+
+    &-item {
+      display: block;
+      line-height: 40px;
+      height: 40px;
+      color: vars.$font-secondary-color;
+      padding: 0 20px;
+      cursor: pointer;
+
+      &:hover {
+        color: vars.$font-primary-color;
+        background-color: vars.$bg-hilight-color;
+      }
+    }
+
+    &-item-shot {
+      color: vars.$font-shot-color;
+    }
+  }
+
+}
+
+.result {
+
+  &-author-wrapper,
+  &-category-wrapper,
+  &-book-wrapper {
+    width: 700px;
+    max-width: 700px;
+    border-radius: 12px;
+
+  }
+
+  &-item {
+    display: flex;
+    padding: 20px;
+    cursor: pointer;
+    align-items: center;
+    box-sizing: border-box;
+    background: vars.$bg-third-color;
+
+    &:hover {
+      background: vars.$bg-hilight-color;
+    }
+
+    &-left {
+      margin-right: 20px;
+    }
+
+    &-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+  }
+
+  &-text-title {
+    font-size: 14px;
+    line-height: 2.6;
+    font-family: 'SourceHanSerifCN-Bold', PingFang SC, -apple-system, SF UI Text, Lucida Grande, STheiti, Microsoft YaHei, sans-serif;
+  }
+
+  &-text-author {
+    font-size: 13px;
+    line-height: 1.5;
+    color: vars.$font-secondary-color;
+
+    &:hover {
+      color: vars.$font-hilight-color
+    }
+  }
+
+  &-text-info {
+    margin-top: 6px;
+    color: vars.$font-secondary-color;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  &-icon-more {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: center/contain no-repeat url('/src/assets/arrow_right_gray.png');
+    margin-left: 2px;
+  }
+
+  &-splitor-dot {
+    display: inline-block;
+    padding: 0 4px;
+    vertical-align: 2;
+  }
+}
+
+.result-author {
+  &-item {
+    height: 92px;
+  }
+
+  &-item-left {
+    width: 48px;
+    height: 100%;
+    background: center/contain no-repeat url('/src/assets/search_author.png');
+
+  }
+}
+
+.result-category {
+  &-item {
+    height: 92px;
+  }
+
+  &-item-left {
+    width: 44px;
+    height: 100%;
+    background: center/contain no-repeat url('/src/assets/search_category.png');
+
+  }
+}
+
+.result-book {
+  &-item {
+    max-height: 150px;
+    overflow: hidden;
+  }
+
+  &-item-left {
+    width: 72px;
+    min-width: 72px;
+  }
+}
+
+
+
+
+
+
+
 .header {
+  margin-top: 150px;
   width: 160px;
   height: 36px;
-  margin: 0 auto;
   background: center/contain url('https://weread-1258476243.file.myqcloud.com/web/wrwebnjlogic/image/search_header_logo_2x.8d460b95.png')
 }
