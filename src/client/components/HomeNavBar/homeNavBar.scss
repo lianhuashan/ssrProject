@@ -26,7 +26,6 @@ ul {
 
   li+li {
 
-    // border-left: 1px solid vars.$font-link-color;
     @include mixins.border-1px(vars.$font-link-color, 'border-left') {
       width: 32px;
       height: 32;
@@ -34,17 +33,19 @@ ul {
       top: 4px;
     }
   }
-}
 
-.link {
-  text-decoration: none;
-  font-size: 14px;
-  color: vars.$font-secondary-color;
+  .link {
+    text-decoration: none;
+    font-size: 14px;
+    color: vars.$font-secondary-color;
 
-  &:hover {
-    color: vars.$font-hilight-color;
+    &:hover {
+      color: vars.$font-hilight-color;
+    }
   }
 }
+
+
 
 .logo {
   width: 160px;

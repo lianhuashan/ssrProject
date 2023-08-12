@@ -37,12 +37,13 @@ module.exports = (isServer = false) => ({
       {
         test: /\.s[ac]ss$/i,
         use: [
-          devMode
-            ? 'style-loader'
-            : {
-                loader: MiniCssExtractPlugin.loader,
-                options: { esModule: false, publicPath: './' }
-              },
+          // devMode
+          //   ? 'style-loader'
+          //   :
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: { esModule: false, publicPath: './' }
+          },
           {
             loader: '@teamsupercell/typings-for-css-modules-loader'
           },

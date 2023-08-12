@@ -26,7 +26,8 @@ function useHMR() {
     webpackDevMid(compiler, {
       publicPath: webpackConfig.output.publicPath,
       serverSideRender: true,
-      writeToDisk: true
+      writeToDisk: true,
+      index: false
       // index: '',
       // mimeTypeDefault: 'text/html'
     })
