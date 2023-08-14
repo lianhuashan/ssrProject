@@ -3,7 +3,7 @@ const { merge } = require('webpack-merge');
 const getConfig = require('./webpack.base');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
-const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true';
+const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000';
 
 /**
  * @type {import('webpack').Configuration}
@@ -15,7 +15,7 @@ const clientConfig = {
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, '..', 'public'),
-    publicPath: 'http://localhost:5001/public/'
+    publicPath: '/public/'
   },
   devtool: 'source-map',
   plugins: [new webpack.HotModuleReplacementPlugin()]

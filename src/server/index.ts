@@ -22,16 +22,7 @@ function useHMR() {
   var compiler = webpack(webpackConfig);
 
   // Step 2: Attach the dev middleware to the compiler & the server
-  app.use(
-    webpackDevMid(compiler, {
-      publicPath: webpackConfig.output.publicPath,
-      serverSideRender: true,
-      writeToDisk: true,
-      index: false
-      // index: '',
-      // mimeTypeDefault: 'text/html'
-    })
-  );
+  app.use(webpackDevMid(compiler));
 
   // Step 3: Attach the hot middleware to the compiler & the server
   app.use(
@@ -43,7 +34,8 @@ function useHMR() {
   );
 
   // The following middleware would not be invoked until the latest build is finished.
-  // app.use((req, res) => {
+  // app.use(/^\/(\w+\/?)*$/, (req, res) => {
+  //   console.log('webpack ssr midd', req.path);
   //   const { devMiddleware } = res.locals.webpack;
   //   const outputFileSystem = devMiddleware.outputFileSystem;
   //   const jsonWebpackStats = devMiddleware.stats.toJson();
@@ -69,7 +61,7 @@ function useHMR() {
   //     <div id="root"></div>
   //     ${normalizeAssets(assetsByChunkName.main)
   //       .filter((path) => path.endsWith('.js'))
-  //       .map((path) => `<script src="${path}"></script>`)
+  //       .map((path) => `<script src="http://127.0.0.1:5001/${path}"></script>`)
   //       .join('\n')}
   //   </body>
   // </html>
@@ -77,7 +69,7 @@ function useHMR() {
   // });
 }
 
-app.use(express.static('public'));
+// app.use(express.static('public'));
 
 app.use(
   '/api',
@@ -90,19 +82,20 @@ app.use(
 
 useHMR();
 
-app.get('*', async (req, res) => {
-  console.log('get *');
+app.get(/^\/(\w+\/?)*$/, async (req, res) => {
+  console.log('get *', req.path);
+
   const content = await render(req);
 
   res.set('Content-Type', 'text/html');
   res.send(`<html>
   <head>
   <title>hello</title>
-  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="http://127.0.0.1:5001/public/main.css" />
   </head>
   <body>
    <div id="root">${content}</div>
-  <script type="text/javascript" src="index.js"></script>
+  <script type="text/javascript" src="http://127.0.0.1:5001/public/index.js"></script>
   </body>
   </html>`);
 });
