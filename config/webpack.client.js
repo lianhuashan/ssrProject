@@ -11,35 +11,14 @@ const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&t
 
 const clientConfig = {
   mode: 'development',
-  entry: [hotMiddlewareScript, './src/client/index.tsx'],
+  entry: [hotMiddlewareScript, './src/client.tsx'],
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, '..', 'public'),
     publicPath: '/public/'
   },
   devtool: 'source-map',
-  plugins: [new webpack.HotModuleReplacementPlugin()]
-
-  // devServer: {
-  //   historyApiFallback: true,
-  //   static: { directory: path.resolve(__dirname, '..', 'public') },
-  //   hot: true,
-  //   host: '0.0.0.0',
-  //   port: 5000,
-  //   client: {
-  //     logging: 'info'
-  //   },
-
-  //   onListening: function (devServer) {
-  //     if (!devServer) {
-  //       throw new Error('webpack-dev-server is not defined');
-  //     }
-
-  //     const port = devServer.server.address().port;
-  //     console.log('Listening on port:', port);
-  //   }
-  // },
-  // plugins: [new HtmlWebpackPlugin({ title: 'ssr project', template: path.resolve(__dirname, '..', 'template.html') })]
+  plugins: [new webpack.HotModuleReplacementPlugin(), new webpack.NoEmitOnErrorsPlugin()]
 };
 
 module.exports = merge(getConfig(), clientConfig);

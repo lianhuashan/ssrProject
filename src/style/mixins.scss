@@ -65,7 +65,7 @@
       width: 20px;
       height: 100%;
       display: inline-block;
-      background: center/contain no-repeat url('../../../assets/search_magnifier.png');
+      background: center/contain no-repeat url('/src/assets/search_magnifier.png');
       transform: translateX(-50%);
       left: 30px;
       cursor: pointer;
@@ -78,7 +78,7 @@
       height: 32px;
       display: inline-block;
       border-radius: 50%;
-      background: url('../../../assets/search_return.png');
+      background: url('/src/assets/search_return.png');
       transform: translateX(50%);
       right: 32px;
       top: 8px;

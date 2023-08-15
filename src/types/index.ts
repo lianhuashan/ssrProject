@@ -1,3 +1,5 @@
+import { Stats } from 'webpack';
+
 export interface ResType<T> {
   data: T;
   state: number;
@@ -142,4 +144,9 @@ export interface SearchResult {
   queryUid: string;
   sid: string;
   totalCount: number;
+}
+
+export interface MiddlewareRenderer extends Record<string, any> {
+  clientStats: Stats;
+  serverStats: Stats;
 }

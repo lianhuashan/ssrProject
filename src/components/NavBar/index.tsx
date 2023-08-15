@@ -15,6 +15,7 @@ const NavBar = () => {
           <li onClick={handleSwitchVersion}>墨水屏版</li>
           <li onClick={handleSwitchPhone}>手机版</li>
           <li onClick={handleLogin}>登录</li>
+          lll
         </ul>
       </div>
     </div>

@@ -2,6 +2,7 @@ const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 const { merge } = require('webpack-merge');
 const getConfig = require('./webpack.base');
+const webpack = require('webpack');
 /**
  * @type {import('webpack').Configuration}
  */
@@ -9,14 +10,15 @@ const getConfig = require('./webpack.base');
 const serverConfig = {
   target: 'node',
   mode: 'development',
-  entry: './src/server/index',
+  entry: ['./src/server.tsx'],
   externals: [nodeExternals()],
   devtool: 'source-map',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, '..', 'build'),
-    publicPath: 'http://localhost:5001/public'
-  }
+    libraryTarget: 'commonjs2'
+  },
+  plugins: [new webpack.HotModuleReplacementPlugin(), new webpack.NoEmitOnErrorsPlugin()]
 };
 
 module.exports = merge(getConfig(true), serverConfig);

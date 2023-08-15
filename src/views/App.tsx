@@ -1,8 +1,8 @@
 import React from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import routes from '../../const/routes';
+import routes from '../const/routes';
 import { Provider as ReduxProvider } from 'react-redux';
-import store from '../../store';
+import store from '../store';
 
 const App = () => {
   const preLoadedState = (window as any)?.__PRE_LOAD_STATE__;

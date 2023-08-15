@@ -4,6 +4,8 @@ const BookDetail = () => {
   return (
     <div className="wrapper">
       <NavBar />
+      <div>test</div>
+      <div>test111</div>
     </div>
   );
 };

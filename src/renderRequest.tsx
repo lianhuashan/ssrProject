@@ -1,14 +1,19 @@
+import { StaticRouterProvider, createStaticHandler, createStaticRouter } from 'react-router-dom/server';
+import store from './store';
+import { Provider as ReduxProvider } from 'react-redux';
+import type { Request } from 'express';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import routes from '../../const/routes';
-import { StaticRouterProvider, createStaticHandler, createStaticRouter } from 'react-router-dom/server';
-import store from '../../store';
-import { Provider as ReduxProvider } from 'react-redux';
-import express from 'express';
-import { ServerStyleSheet } from 'styled-components';
-let { query, dataRoutes } = createStaticHandler(routes);
 
-export const render = async (request: express.Request) => {
+let routes = require('./const/routes').default;
+if (module.hot) {
+  module.hot.accept('./const/routes.tsx', () => {
+    routes = require('./const/routes').default;
+  });
+}
+
+export const render = async (request: Request) => {
+  let { query, dataRoutes } = createStaticHandler(routes);
   let remixRequest = createFetchRequest(request);
   let context = await query(remixRequest);
 
@@ -32,7 +37,7 @@ export const render = async (request: express.Request) => {
   return htmlStr;
 };
 
-export function createFetchRequest(req: express.Request): Request {
+function createFetchRequest(req: Request): Request {
   let origin = `${req.protocol}://${req.get('host')}`;
   // let origin = ;
   let port = '3001';

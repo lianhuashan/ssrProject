@@ -5,6 +5,7 @@
   "main": "index.js",
   "types": "./types/index.d.ts",
   "scripts": {
+    "start": "npx ts-node -T index.ts",
     "dev": "npm-run-all --parallel dev:build:* --sequential dev:start",
     "dev:start": "nodemon --watch ./build node ./build/bundle.js",
     "dev:build:client": "rimraf ./public && webpack --config ./config/webpack.client.js",
@@ -72,6 +73,7 @@
     "webpack-dev-middleware": "^6.1.1",
     "webpack-dev-server": "^4.15.1",
     "webpack-hot-middleware": "^2.25.4",
+    "webpack-hot-server-middleware": "^0.6.1",
     "webpack-merge": "^5.9.0",
     "webpack-node-externals": "^3.0.0"
   }

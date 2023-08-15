@@ -154,6 +154,9 @@ devDependencies:
   webpack-hot-middleware:
     specifier: ^2.25.4
     version: 2.25.4
+  webpack-hot-server-middleware:
+    specifier: ^0.6.1
+    version: 0.6.1(webpack@5.87.0)
   webpack-merge:
     specifier: ^5.9.0
     version: 5.9.0
@@ -2782,7 +2785,6 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.3
-    dev: false
 
   /debug@4.3.4:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
@@ -5673,6 +5675,19 @@ packages:
       ansi-html-community: 0.0.8
       html-entities: 2.4.0
       strip-ansi: 6.0.1
+    dev: true
+
+  /webpack-hot-server-middleware@0.6.1(webpack@5.87.0):
+    resolution: {integrity: sha512-YOKwdS0hnmADsNCsReGkMOBkoz2YVrQZvnVcViM2TDXlK9NnaOGXmnrLFjzwsHFa0/iuJy/QJFEoMxzk8R1Mgg==}
+    peerDependencies:
+      webpack: '*'
+    dependencies:
+      debug: 3.2.7
+      require-from-string: 2.0.2
+      source-map-support: 0.5.21
+      webpack: 5.87.0(webpack-cli@5.1.4)
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /webpack-merge@5.9.0:
