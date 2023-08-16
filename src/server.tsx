@@ -5,6 +5,9 @@ import { render } from './renderRequest';
 
 export const requestHandler = async (req: Request, res: Response, clientStats: Stats) => {
   const content = await render(req);
+  console.log('====================================');
+  console.log(content);
+  console.log('====================================');
   res.set('Content-Type', 'text/html');
   res.send(`<html>
   <head>
@@ -18,5 +21,7 @@ export const requestHandler = async (req: Request, res: Response, clientStats: S
   </html>`);
 };
 export default function middlewareRenderer({ clientStats, serverStats }: MiddlewareRenderer): RequestHandler {
-  return (req: Request, res: Response) => requestHandler(req, res, clientStats);
+  return (req: Request, res: Response) => {
+    requestHandler(req, res, clientStats);
+  };
 }
