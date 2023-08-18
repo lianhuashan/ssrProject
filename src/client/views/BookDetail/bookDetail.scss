@@ -1,0 +1,134 @@
+@use '/src/client/style/mixins.scss';
+@use '/src/client/style/vars.scss';
+
+.detail-wrapper {
+  background-color: #262628;
+}
+
+.content-wrapper {
+  background-color: #1c1c1d;
+  max-width: 1000px;
+  padding: 50px;
+  margin: 0 auto;
+}
+
+.book-intro {
+  display: flex;
+  max-height: 232px;
+
+  &-left {
+    width: 160px;
+    height: 232px;
+    margin-right: 30px;
+  }
+
+  &-head {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-title {
+    font-size: 16px;
+    font-family: 'SourceHanSerifCN-Bold';
+    color: #fff;
+  }
+
+  &-author {
+    font-size: 14px;
+    color: vars.$blue-0;
+  }
+
+  &-category {
+    width: 117px;
+    height: 28px;
+    margin-top: 12px;
+  }
+
+  &-text {
+    margin-top: 12px;
+    overflow: hidden;
+    color: vars.$font-primary-color;
+    font-size: 12px;
+
+    &:hover {
+      color: vars.$font-hilight-color;
+    }
+  }
+
+  &-action-btn {
+    padding: 12px;
+    border-radius: 12px;
+    background-color: none;
+
+    &-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+
+}
+
+.book-review {
+  margin-top: 40px;
+
+  &-title {
+    color: vars.$font-primary-color;
+    font-size: 14px;
+  }
+
+  &-content {
+    font-size: 12px;
+    color: vars.$font-secondary-color;
+    line-height: 2;
+    display: flex;
+  }
+
+  &-category {
+    width: 132px;
+    height: 36px;
+  }
+
+  &-bar {
+    @include mixins.progress-bar()
+  }
+
+  &-action {
+    &-wrapper {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    &-btn {
+      flex: 1 1 auto;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+  }
+}
+
+.book-comment {
+  margin-top: 2px;
+
+  &-item {
+    background-color: #313133;
+    border-radius: 12px;
+    margin-top: 12px;
+    color: vars.$font-primary-color;
+
+    &-author {
+      color: vars.$font-secondary-color;
+
+      &-avatar {
+        width: 20px;
+        height: 20px;
+      }
+
+    }
+
+
+
+  }
+}

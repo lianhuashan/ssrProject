@@ -27,7 +27,7 @@ export const render = async (request: express.Request) => {
       </React.StrictMode>
     );
   } catch (e) {
-  } finally {
+    throw e;
   }
   return htmlStr;
 };

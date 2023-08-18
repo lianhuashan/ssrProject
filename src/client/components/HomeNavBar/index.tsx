@@ -1,26 +1,35 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './homeNavBar.scss';
 import Mask from '../common/Mask';
 import SearchMask from '../SearchMask';
-import NavUl from '../NavUl';
+import useNavBar from '../../hooks/useNavBar';
 
 export default () => {
-  const [showLogin, setShowLogin] = useState<boolean>(false);
-  const [showSearch, setShowSearch] = useState<boolean>(false);
-  const handleTransfer = () => {
-    setShowLogin(true);
-  };
-  const handleSwitchVersion = () => {
-    setShowSearch(true);
-  };
-  const handleSwitchPhone = () => {};
-  const handleLogin = () => {
-    setShowLogin(true);
-  };
+  // const [showLogin, setShowLogin] = useState<boolean>(false);
+  // const [showSearch, setShowSearch] = useState<boolean>(false);
+  // const handleTransfer = () => {
+  //   setShowLogin(true);
+  // };
+  // const handleSwitchVersion = () => {
+  //   setShowSearch(true);
+  // };
+  // const handleSwitchPhone = () => {};
+  // const handleLogin = () => {
+  //   setShowLogin(true);
+  // };
+  const { showLogin, setShowLogin, showSearch, setShowSearch, handleTransfer, handleSwitchVersion, handleSwitchPhone, handleLogin } =
+    useNavBar();
+  const navigate = useNavigate();
   return (
     <div className={styles.wrapper}>
-      <NavUl />
+      <ul>
+        <li onClick={() => navigate('/')}>首页</li>
+        <li onClick={handleTransfer}>传书到手机</li>
+        <li onClick={handleSwitchVersion}>墨水屏版</li>
+        <li onClick={handleSwitchPhone}>手机版</li>
+        <li onClick={handleLogin}>登录</li>
+      </ul>
       <h1>
         <img
           className={styles.logo}

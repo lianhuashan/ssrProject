@@ -15,16 +15,14 @@ const routes: RouteObject[] = [
       let res = null;
       try {
         res = await axios.get<null, ResType<IndexCategory>>('/v1/index');
-      } catch (e: any) {
-      } finally {
-      }
+      } catch (e: any) {}
       return res?.data || {};
     }
   },
-  { path: '/book/info', element: <BookInfo /> },
-  { path: '/book/detail', element: <BookDetail /> },
-  { path: '/category', element: <BookCategory /> },
-  { path: '/login', element: <Login /> },
+  // { path: '/book/info', element: <BookInfo /> },
+  { path: '/book/detail/:id', element: <BookDetail /> },
+  // { path: '/category', element: <BookCategory /> },
+  // { path: '/login', element: <Login /> },
   { path: '*', element: <ErrorBoudary /> }
 ];
 

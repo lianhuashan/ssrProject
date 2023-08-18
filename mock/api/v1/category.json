@@ -1,0 +1,131 @@
+{
+  "bookList": [
+    {
+      "book_info": {
+        "id": "100000",
+        "title": "杀死一只知更鸟（同名电影原著）",
+        "author": "哈珀·李",
+        "cover": "https://cdn.weread.qq.com/weread/cover/32/YueWen_853116/t6_YueWen_853116.jpg",
+        "category": [
+          {
+            "category_id": "100000",
+            "category_name": "总榜",
+            "cover": {
+              "small_pic": "https://weread-1258476243.file.myqcloud.com/miniprogram/assets/reader/newRatings_900.png"
+            }
+          }
+        ],
+        "brief": "《杀死一只知更鸟》的故事发生在大萧条时期美国南方一个静谧的小镇，几桩离奇的疑案彻底打破了几个孩子平静的生活：事件的真凶，怪人的谜底，传言背后的真相……在父亲的指引下，他们在迷雾中寻找真知，在磨难中历练风度，在不公平中积累正气，经历了暴风骤雨般的成长，也感受了人间的温暖与真情。"
+      },
+      "reader_info": {
+        "today": 5000
+      },
+      "review_info": {
+        "recommond_info": {
+          "platform_point": "987"
+        }
+      }
+    }
+  ],
+  "hot_category": [
+    {
+      "category_id": "100000",
+      "category_name": "飙升榜",
+      "cover": {
+        "eink_chart_title": "https://weread-1258476243.file.myqcloud.com/assets/ranklist.rising.eink_chart_title.g9cGWpSMW5.png"
+      }
+    },
+    {
+      "category_id": "100001",
+      "category_name": "新书·出版",
+      "cover": {
+        "eink_chart_title": "https://weread-1258476243.file.myqcloud.com/assets/ranklist.newbook.eink_chart_title.CvRJLa24MK.png"
+      }
+    },
+    {
+      "category_id": "100002",
+      "category_name": "小说榜",
+      "cover": {
+        "eink_chart_title": "https://weread-1258476243.file.myqcloud.com/assets/ranklist.general_novel_rising.eink_chart_title.qe1RRm02RG.png"
+      }
+    },
+    {
+      "category_id": "100003",
+      "category_name": "总榜",
+      "cover": {
+        "eink_chart_title": "https://weread-1258476243.file.myqcloud.com/assets/ranklist.all.eink_chart_title.JVKRmQ5WCg.png"
+      }
+    },
+    {
+      "category_id": "100004",
+      "category_name": "神作榜·出版",
+      "cover": {
+        "eink_chart_title": "https://weread-1258476243.file.myqcloud.com/assets/ranklist.newrating_publish.eink_chart_title.jwTnWfbS40.png"
+      }
+    },
+    {
+      "category_id": "100005",
+      "category_name": "神作潜力榜·出版",
+      "cover": {
+        "eink_chart_title": "https://weread-1258476243.file.myqcloud.com/assets/ranklist.newrating_potential_publish.eink_chart_title.KHw03y0Pyt.png"
+      }
+    }
+  ],
+  "category": [
+    {
+      "category_id": 100000,
+      "total_count": 24,
+      "category_name": "精品小说"
+    },
+    {
+      "category_id": 300000,
+      "total_count": 7,
+      "category_name": "文学"
+    },
+    {
+      "category_id": 1000000,
+      "total_count": 4,
+      "category_name": "个人成长"
+    },
+    {
+      "category_id": 800000,
+      "total_count": 4,
+      "category_name": "心理"
+    },
+    {
+      "category_id": 500000,
+      "total_count": 4,
+      "category_name": "人物传记"
+    },
+    {
+      "category_id": 900000,
+      "total_count": 3,
+      "category_name": "社会文化"
+    },
+    {
+      "category_id": 1100000,
+      "total_count": 2,
+      "category_name": "经济理财"
+    },
+    {
+      "category_id": 200000,
+      "total_count": 2,
+      "category_name": "历史"
+    },
+    {
+      "category_id": 1600000,
+      "total_count": 2,
+      "category_name": "生活百科"
+    },
+    {
+      "category_id": 2400000,
+      "total_count": 1,
+      "category_name": "漫画"
+    },
+    {
+      "category_id": 2000000,
+      "total_count": 1,
+      "category_name": "女生小说"
+    }
+  ]
+}

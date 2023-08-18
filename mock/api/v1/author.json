@@ -1,0 +1,34 @@
+{
+  "author": {
+    "name": "哈珀·李",
+    "intro": "哈珀·李，女，1926年4月28日出生于美国南方阿拉巴马州的一个小镇，1960年发表她一生中唯一的长篇小说《杀死一只知更鸟》令她获得巨大的声誉，这部小说获得当年的普利策小说奖，至今已经被翻译成40多种语言，全球销量超过3000万册。2016年2月19日，珀·李去世，享年89岁"
+  },
+  "bookList": [
+    {
+      "book_info": {
+        "id": "100000",
+        "title": "杀死一只知更鸟（同名电影原著）",
+        "author": "哈珀·李",
+        "cover": "https://cdn.weread.qq.com/weread/cover/32/YueWen_853116/t6_YueWen_853116.jpg",
+        "category": [
+          {
+            "category_id": "100000",
+            "category_name": "总榜",
+            "cover": {
+              "small_pic": "https://weread-1258476243.file.myqcloud.com/miniprogram/assets/reader/newRatings_900.png"
+            }
+          }
+        ],
+        "brief": "《杀死一只知更鸟》的故事发生在大萧条时期美国南方一个静谧的小镇，几桩离奇的疑案彻底打破了几个孩子平静的生活：事件的真凶，怪人的谜底，传言背后的真相……在父亲的指引下，他们在迷雾中寻找真知，在磨难中历练风度，在不公平中积累正气，经历了暴风骤雨般的成长，也感受了人间的温暖与真情。"
+      },
+      "reader_info": {
+        "today": 5000
+      },
+      "review_info": {
+        "recommond_info": {
+          "platform_point": "987"
+        }
+      }
+    }
+  ]
+}

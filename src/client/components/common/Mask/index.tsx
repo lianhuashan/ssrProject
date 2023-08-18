@@ -45,6 +45,11 @@ const Mask = ({
   });
 
   const [innerVisible, setInnerVisible] = useState(visible);
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    console.log('mask useEffect');
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
     setCustomStyle({
@@ -83,14 +88,18 @@ const Mask = ({
     e.stopPropagation();
   };
 
-  return createPortal(
-    <div
-      className={`${styles.mask} ${disableBodyScroll ? styles['mask-disable-body-scroll'] : ''}`}
-      style={customStyle}
-      onClick={(e) => handleClick(e)}>
-      {children}
-    </div>,
-    container || document.body
+  return isClient ? (
+    createPortal(
+      <div
+        className={`${styles.mask} ${disableBodyScroll ? styles['mask-disable-body-scroll'] : ''}`}
+        style={customStyle}
+        onClick={(e) => handleClick(e)}>
+        {children}
+      </div>,
+      container || document.body
+    )
+  ) : (
+    <></>
   );
 };
 

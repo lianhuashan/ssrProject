@@ -1,7 +1,6 @@
 declare namespace HomeNavBarScssNamespace {
   export interface IHomeNavBarScss {
     'close-btn': string;
-    link: string;
     logo: string;
     qrcode: string;
     'qrcode-outer': string;

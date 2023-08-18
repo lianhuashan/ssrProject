@@ -4,10 +4,22 @@
 .nav-bar-wrapper {
   width: 100%;
   height: 72px;
-  background-color: vars.$bg-primary-color;
+  background-color: #1d1d1e;
   position: sticky;
   top: 0;
   left: 0;
+
+  .nav-bar {
+    display: flex;
+    max-width: 1200px;
+    align-items: center;
+    height: 100%;
+  }
+
+
+  ul {
+    @include mixins.nav-ul;
+  }
 }
 
 .nav-bar {
@@ -40,30 +52,4 @@
     outline: none;
   }
 
-}
-
-ul {
-  display: flex;
-  list-style: none;
-  font-size: 14px;
-  color: vars.$font-secondary-color;
-
-  li {
-    color: vars.$font-secondary-color;
-    cursor: pointer;
-    font-size: 14px;
-
-    &:hover {
-      color: vars.$font-hilight-color;
-    }
-  }
-
-  li+li {
-    @include mixins.border-1px(vars.$font-link-color, 'border-left') {
-      width: 32px;
-      height: 32;
-      left: -18px;
-      top: 4px;
-    }
-  }
 }

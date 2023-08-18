@@ -5,6 +5,7 @@ import webpack from 'webpack';
 import webpackDevMid from 'webpack-dev-middleware';
 import webpackHotMid from 'webpack-hot-middleware';
 import isObject from 'is-object';
+import router from './request';
 const app = express();
 
 import { render } from '../client/views/app/Server';
@@ -71,22 +72,23 @@ function useHMR() {
 
 // app.use(express.static('public'));
 
-app.use(
-  '/api',
-  proxy('http://127.0.0.1:3001', {
-    proxyReqPathResolver(req) {
-      return '/api' + req.path;
-    }
-  })
-);
-
+// app.use(
+//   '/api',
+//   proxy('http://127.0.0.1:3001', {
+//     proxyReqPathResolver(req) {
+//       return '/api' + req.path;
+//     }
+//   })
+// );
+app.use(express.static('/public'));
 useHMR();
 
-app.get(/^\/(\w+\/?)*$/, async (req, res) => {
+app.use('/api', router);
+
+app.get(/^\/(?!api|public|_hmr|favicon)/, async (req, res) => {
   console.log('get *', req.path);
 
   const content = await render(req);
-
   res.set('Content-Type', 'text/html');
   res.send(`<html>
   <head>

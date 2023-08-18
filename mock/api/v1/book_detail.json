@@ -1,0 +1,60 @@
+{
+  "book_info": {
+    "book_id": "100000",
+    "cover": "https://cdn.weread.qq.com/weread/cover/32/YueWen_853116/t6_YueWen_853116.jpg",
+    "title": "杀死一只知更鸟（同名电影原著）",
+    "author": "哈珀·李",
+    "brief": "愿你克服偏见 愿你一往无前 《杀死一只知更鸟》的故事发生在大萧条时期美国南方一个静谧的小镇，几桩离奇的疑案彻底打破了几个孩子平静的生活：事件的真凶，怪人的谜底，传言背后的真相……在父亲的指引下，他们在迷雾中寻找真知，在磨难中历练风度，在不公平中积累正气，经历了暴风骤雨般的成长，也感受了人间的温暖与真情。",
+    "category": [
+      {
+        "category_id": "100000",
+        "category_name": "总榜",
+        "cover": {
+          "small_pic": "https://weread-1258476243.file.myqcloud.com/web/wrwebnjlogic/image/reader_ranklist_all_2x.c8c5a51b.png"
+        }
+      }
+    ]
+  },
+  "review_info": {
+    "book_id": "100000",
+    "category": [
+      {
+        "category_id": "100000",
+        "category_name": "总榜",
+        "cover": {
+          "small_pic": "https://weread-1258476243.file.myqcloud.com/miniprogram/assets/reader/newRatings_900.png"
+        }
+      }
+    ],
+    "recommond_info": {
+      "total": 870000,
+      "support": 3829,
+      "fine": 2132,
+      "bad": 21,
+      "platform_point": "987"
+    }
+  },
+  "comment_info": [
+    {
+      "book_id": "100000",
+      "author": {
+        "nick_name": "敏敏子",
+        "avatar": "https://wx.qlogo.cn/mmhead/7N2JRaWooRCuHHVmBn0uN4mzDXXPKkQLlJkYVhTz8fHSib9BEKicDAng/46"
+      },
+      "reviewType": "support",
+      "detail": "这是一本值得我反复阅读的书！！！ 你永远也不可能真正了解一个人，除非你穿上他的鞋子走来走去，站在他的角度考虑问题，可真当你走过他的路时，你连路过都觉得难过！有时候你所看到的并非事实真相，你了解的不过是浮在水上的冰山一角！偏见无处不在，可因偏见而随意评判说教甚至想改变别人的想法是无知无意义的行为；横看成林侧成峰，远近高低各不同，同一事物的不同角度都有多个形态，更何况是人呢？“我以为别人尊重我，是因为我很优秀，后来才明白，别人尊重我，是因为别人很优秀。”真正的教养不是放在嘴上说的，而是在细微的动作和语言中表现出来的，在文中真的有被阿迪克斯的人格魅力所折服，优秀却不沾沾自喜反而更加平和努力，面对不公平的事敢于发声敢于直面挑战，是勇敢正义的也是温柔有力量的！不要试图去改变任何人，请努力去改变自己，去悦己 阅己 越己！"
+    }
+  ],
+  "mark_info": [
+    {
+      "book_id": "100000",
+      "text": "一个人没必要把自己懂的东西都展现出来。这不是淑女的做派——再说了，人们不喜欢他们身边有什么人比他们懂得多。这会让他们气不打一处来。你使用的语言再标准，也改变不了他们。除非他们自己想学，否则一点儿办法也没有。你要么闭上嘴巴，要么跟他们说一样的话。",
+      "authors": [
+        {
+          "nick_name": "敏敏子",
+          "avatar": "https://wx.qlogo.cn/mmhead/7N2JRaWooRCuHHVmBn0uN4mzDXXPKkQLlJkYVhTz8fHSib9BEKicDAng/46"
+        }
+      ]
+    }
+  ]
+}
