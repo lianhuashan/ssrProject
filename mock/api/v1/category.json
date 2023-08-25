@@ -1,5 +1,9 @@
 {
-  "bookList": [
+  "current": {
+    "category_id": "",
+    "category_name": "飙升榜"
+  },
+  "book_list": [
     {
       "book_info": {
         "id": "100000",
@@ -32,42 +36,42 @@
       "category_id": "100000",
       "category_name": "飙升榜",
       "cover": {
-        "eink_chart_title": "https://weread-1258476243.file.myqcloud.com/assets/ranklist.rising.eink_chart_title.g9cGWpSMW5.png"
+        "eink_chart_title": "https://weread-1258476243.file.myqcloud.com/web/wrwebnjlogic/image/icon_bookstore_list_title_soar_white_2x.04005125.png"
       }
     },
     {
       "category_id": "100001",
       "category_name": "新书·出版",
       "cover": {
-        "eink_chart_title": "https://weread-1258476243.file.myqcloud.com/assets/ranklist.newbook.eink_chart_title.CvRJLa24MK.png"
+        "eink_chart_title": "https://weread-1258476243.file.myqcloud.com/web/wrwebnjlogic/image/icon_bookstore_list_title_newbook_white_2x.d96b5b40.png"
       }
     },
     {
       "category_id": "100002",
       "category_name": "小说榜",
       "cover": {
-        "eink_chart_title": "https://weread-1258476243.file.myqcloud.com/assets/ranklist.general_novel_rising.eink_chart_title.qe1RRm02RG.png"
+        "eink_chart_title": "https://weread-1258476243.file.myqcloud.com/web/wrwebnjlogic/image/icon_bookstore_list_title_novel_white_2x.fc47b533.png"
       }
     },
     {
       "category_id": "100003",
       "category_name": "总榜",
       "cover": {
-        "eink_chart_title": "https://weread-1258476243.file.myqcloud.com/assets/ranklist.all.eink_chart_title.JVKRmQ5WCg.png"
+        "eink_chart_title": "https://weread-1258476243.file.myqcloud.com/web/wrwebnjlogic/image/icon_bookstore_list_title_total_white_2x.cb34edbe.png"
       }
     },
     {
       "category_id": "100004",
       "category_name": "神作榜·出版",
       "cover": {
-        "eink_chart_title": "https://weread-1258476243.file.myqcloud.com/assets/ranklist.newrating_publish.eink_chart_title.jwTnWfbS40.png"
+        "eink_chart_title": "https://weread-1258476243.file.myqcloud.com/web/wrwebnjlogic/image/icon_bookstore_list_title_divine_white_2x.2c41d3a2.png"
       }
     },
     {
       "category_id": "100005",
       "category_name": "神作潜力榜·出版",
       "cover": {
-        "eink_chart_title": "https://weread-1258476243.file.myqcloud.com/assets/ranklist.newrating_potential_publish.eink_chart_title.KHw03y0Pyt.png"
+        "eink_chart_title": "https://weread-1258476243.file.myqcloud.com/web/wrwebnjlogic/image/icon_bookstore_list_title_divine_potential_white_2x.6cd5b10c.png"
       }
     }
   ],

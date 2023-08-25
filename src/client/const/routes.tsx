@@ -1,8 +1,8 @@
 import BookDetail from '../views/BookDetail';
-import BookCategory from '../views/BookCategory';
-import BookInfo from '../views/BookInfo';
+import Category from '../views/Category';
+// import BookInfo from '../views/BookInfo';
 import Home from '../views/Home';
-import Login from '../views/Login';
+// import Login from '../views/Login';
 import type { RouteObject } from 'react-router-dom';
 import ErrorBoudary from '../errorHandler/ErrorBoudary';
 import axios from '../request';
@@ -21,7 +21,7 @@ const routes: RouteObject[] = [
   },
   // { path: '/book/info', element: <BookInfo /> },
   { path: '/book/detail/:id', element: <BookDetail /> },
-  // { path: '/category', element: <BookCategory /> },
+  { path: '/category/:id', element: <Category /> },
   // { path: '/login', element: <Login /> },
   { path: '*', element: <ErrorBoudary /> }
 ];

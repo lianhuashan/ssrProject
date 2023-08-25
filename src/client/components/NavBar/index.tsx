@@ -7,7 +7,7 @@ const NavBar = () => {
   return (
     <div className={styles['nav-bar-wrapper']}>
       <div className={styles['nav-bar']}>
-        <div className={styles.logo}></div>
+        <div className={styles.logo} onClick={() => navigate('/')}></div>
         <input type="text" className={styles['search-input']} />
         <ul>
           <li onClick={() => navigate('/')}>首页</li>

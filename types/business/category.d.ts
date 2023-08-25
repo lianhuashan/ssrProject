@@ -137,3 +137,10 @@ export interface SearchResult {
   sid: string;
   totalCount: number;
 }
+
+interface CategoryInfo {
+  current?: CategoryBrief;
+  book_list?: BookDetail[];
+  hot_category?: CategoryBrief[];
+  category?: CategoryBrief[];
+}

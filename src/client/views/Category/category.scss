@@ -1,0 +1,93 @@
+@use '/src/client/style/vars.scss';
+
+.category-wrapper {
+  background-color: #1c1c1d;
+}
+
+.category-content {
+  display: flex;
+}
+
+.category-left-menu {
+  overflow-y: auto;
+  height: 100%;
+  margin-left: 30px;
+  flex-shrink: 0;
+
+  &-item {
+    height: 56px;
+    line-height: 56px;
+    width: 200px;
+    box-sizing: border-box;
+    font-family: 'SourceHanSerifCN-Bold';
+    font-size: 16px;
+    color: #b2b4b8;
+    padding: 0 18px;
+    background-position: left 20px center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    &:hover {
+      background-color: vars.$bg-hilight-color;
+    }
+
+    &-active,
+    &-active:hover {
+      background-color: vars.$bg-primary-blue-color;
+      border-radius: 6px 0 0 6px;
+
+    }
+  }
+
+}
+
+.category-right-head {
+  font-size: 20px;
+  height: 75px;
+  line-height: 75px;
+  padding-left: 30px;
+  font-family: 'SourceHanSerifCN-Bold';
+
+}
+
+
+.category-book-item {
+  display: grid;
+  grid-template-columns: 30px 108px auto;
+  align-items: center;
+  position: relative;
+  padding: 20px;
+
+
+  a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+
+    &:hover {
+      background-color: vars.$bg-hilight-color;
+    }
+  }
+
+  &-intro {
+    margin-left: 30px;
+    font-size: 14px;
+    color: vars.$font-link-color;
+    line-height: 1.6;
+
+    &-title {
+      font-size: 18px;
+      color: #fff;
+      font-family: 'SourceHanSerifCN-Bold';
+    }
+
+    >p {
+      margin-top: 8px;
+    }
+
+  }
+}

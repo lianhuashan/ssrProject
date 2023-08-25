@@ -3,7 +3,7 @@
     "target": "ES5",
     "module": "ESNext",
     "typeRoots": [
-      "types",
+      "types/**/*",
       "**/**/types",
       "./node_modules/@types"
     ],

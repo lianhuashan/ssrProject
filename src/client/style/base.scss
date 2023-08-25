@@ -100,3 +100,36 @@ a {
   font-family: 'DIN Regular';
   src: url('/src/assets/fonts/DIN\ Regular.ttf')
 }
+
+.common-flex-box {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  &-right {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: flex-end;
+  }
+
+}
+
+
+.common-action-btn {
+  padding: 0px 30px;
+  border-radius: 24px;
+  border: none;
+  height: 40px;
+  line-height: 40px;
+  box-sizing: border-box;
+  color: #fff;
+  background: linear-gradient(90deg, #0087fc, #28b7ff);
+  margin-left: 20px;
+  font-size: 14px;
+  display: grid;
+}
+
+.common-title {
+  font-family: 'SourceHanSerifCN-Bold';
+  font-size: 16px;
+}

@@ -1,10 +1,10 @@
 declare namespace BookDetailScssNamespace {
   export interface IBookDetailScss {
-    bar: string;
     'book-comment': string;
     'book-comment-item': string;
     'book-comment-item-author': string;
     'book-comment-item-author-avatar': string;
+    'book-comment-item-content': string;
     'book-intro': string;
     'book-intro-action-btn': string;
     'book-intro-action-btn-wrapper': string;
@@ -17,11 +17,17 @@ declare namespace BookDetailScssNamespace {
     'book-review': string;
     'book-review-action-btn': string;
     'book-review-action-wrapper': string;
-    'book-review-bar': string;
     'book-review-category': string;
     'book-review-content': string;
+    'book-review-progress': string;
+    'book-review-progress-bar': string;
+    'book-review-right': string;
+    'book-review-right-item': string;
     'book-review-title': string;
     'content-wrapper': string;
+    'detail-fixed-footer': string;
+    'detail-fixed-footer-cover': string;
+    'detail-fixed-footer-inner': string;
     'detail-wrapper': string;
   }
 }

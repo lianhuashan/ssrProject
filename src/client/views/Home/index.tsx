@@ -33,7 +33,10 @@ const Home = () => {
                 ?.filter((item) => item.title && new RegExp(keywords.join('|')).test(item.title))
                 .map((topCategory) => (
                   <div key={topCategory.CategoryId} className={styles['top-category-item']}>
-                    <div>
+                    <div
+                      onClick={() => {
+                        navigate(`/category/${topCategory.CategoryId}`);
+                      }}>
                       <img
                         data-src={topCategory.ranklistCover?.chart_title}
                         src={topCategory.ranklistCover?.chart_title}
@@ -49,7 +52,7 @@ const Home = () => {
                           className={styles['top-book-item']}
                           key={index}
                           onClick={() => {
-                            navigate('/book/detail');
+                            navigate('/book/detail/' + lectureBook.bookInfo?.bookId);
                           }}>
                           <img
                             data-src={lectureBook.bookInfo?.cover}

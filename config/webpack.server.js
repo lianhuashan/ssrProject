@@ -14,8 +14,7 @@ const serverConfig = {
   devtool: 'source-map',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, '..', 'build'),
-    publicPath: 'http://localhost:5001/public'
+    path: path.resolve(__dirname, '..', 'build')
   }
 };
 
