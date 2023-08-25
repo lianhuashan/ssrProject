@@ -5,7 +5,7 @@ import { StaticRouterProvider, createStaticHandler, createStaticRouter } from 'r
 import store from '../../store';
 import { Provider as ReduxProvider } from 'react-redux';
 import express from 'express';
-import { ServerStyleSheet } from 'styled-components';
+import type { Request, Response } from 'express';
 let { query, dataRoutes } = createStaticHandler(routes);
 
 export const render = async (request: express.Request) => {
@@ -67,4 +67,10 @@ export function createFetchRequest(req: express.Request): Request {
   }
 
   return new Request(url.href, init);
+}
+
+export default function serverRender({ clientStas, serverStats }: any) {
+  return (req: Request, res: Response) => {
+    res.send(render(req));
+  };
 }

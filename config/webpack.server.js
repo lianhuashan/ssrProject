@@ -9,12 +9,13 @@ const getConfig = require('./webpack.base');
 const serverConfig = {
   target: 'node',
   mode: 'development',
-  entry: './src/server/index',
+  entry: './src/client/views/app/Server',
   externals: [nodeExternals()],
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, '..', 'build')
+    path: path.resolve(__dirname, '..', 'build'),
+    libraryTarget: 'commonjs2'
   }
 };
 

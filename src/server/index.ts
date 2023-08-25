@@ -11,10 +11,8 @@ const clientConfig = webpackConfig.find((config: any) => config.name === 'client
 
 const app = express();
 
-// Step 2: Attach the dev middleware to the compiler & the server
 app.use(webpackDevMid(compiler, { publicPath: clientConfig.output.publicPath, serverSideRender: true, index: false }));
 
-// Step 3: Attach the hot middleware to the compiler & the server
 app.use(
   webpackHotMid(clientCompiler as any, {
     log: console.log,
