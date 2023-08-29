@@ -1,5 +1,5 @@
 const client = require('./webpack.client');
-const server = require('./webpack.server');
+const server = require('./webpack.server.js');
 
 module.exports = [
   { name: 'client', ...client },

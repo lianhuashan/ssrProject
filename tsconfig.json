@@ -1,4 +1,9 @@
 {
+  "ts-node": {
+    "esm": true,
+    // "transpileOnly": true,
+    "experimentalSpecifierResolution": "node",
+  },
   "compilerOptions": {
     "target": "ES5",
     "module": "ESNext",
@@ -15,7 +20,7 @@
     "outDir": "./public/es",
     "rootDir": "./",
     "strict": true,
-    "moduleResolution": "node",
+    "moduleResolution": "NodeNext",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
@@ -33,5 +38,5 @@
     "./config",
     "./build",
     "./public"
-  ]
+  ],
 }

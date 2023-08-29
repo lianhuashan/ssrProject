@@ -2,6 +2,7 @@ const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 const { merge } = require('webpack-merge');
 const getConfig = require('./webpack.base');
+const webpack = require('webpack');
 /**
  * @type {import('webpack').Configuration}
  */
@@ -16,7 +17,8 @@ const serverConfig = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, '..', 'build'),
     libraryTarget: 'commonjs2'
-  }
+  },
+  plugins: [new webpack.HotModuleReplacementPlugin(), new webpack.NoEmitOnErrorsPlugin()]
 };
 
 module.exports = merge(getConfig(true), serverConfig);

@@ -5,7 +5,7 @@
   "main": "index.js",
   "types": "./types/index.d.ts",
   "scripts": {
-    "start": "ts-node ./server/index.ts",
+    "start": "npx ts-node --project ./tsconfig.json ./src/server/index.ts",
     "dev": "npm-run-all --parallel dev:build:* --sequential dev:start",
     "dev:start": "nodemon --watch ./build node ./build/bundle.js",
     "dev:build:client": "rimraf ./public && webpack --config ./config/webpack.client.js",
