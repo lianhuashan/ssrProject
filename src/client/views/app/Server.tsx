@@ -20,21 +20,24 @@ export const render = async (request: express.Request, response: express.Respons
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="main.css"></link>
+        <link rel="stylesheet" href="http://127.0.0.1:5001/public/main.css"></link>
         <title>My app</title>
       </head>
       <body>
-        <React.StrictMode>
-          <ReduxProvider store={store}>
-            <StaticRouterProvider router={router} context={context} nonce="the-nonce" />
-          </ReduxProvider>
-        </React.StrictMode>
+        <div id="root">
+          <React.StrictMode>
+            <ReduxProvider store={store}>
+              <StaticRouterProvider router={router} context={context} nonce="the-nonce" />
+            </ReduxProvider>
+          </React.StrictMode>
+        </div>
       </body>
+      <script src="http://127.0.0.1:5001/public/index.js"></script>
     </html>,
     {
-      bootstrapScripts: ['index.js'],
+      // bootstrapScripts: ['index.js'],
       onShellReady() {
-        response.setHeader('content-type', 'text/html');
+        // response.setHeader('content-type', 'text/html');
         pipe(response);
       }
     }

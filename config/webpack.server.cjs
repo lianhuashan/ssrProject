@@ -1,7 +1,7 @@
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 const { merge } = require('webpack-merge');
-const getConfig = require('./webpack.base');
+const getConfig = require('./webpack.base.cjs');
 const webpack = require('webpack');
 /**
  * @type {import('webpack').Configuration}

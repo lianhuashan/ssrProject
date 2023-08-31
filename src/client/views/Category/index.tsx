@@ -9,13 +9,13 @@ import { Navigate, useNavigate } from 'react-router-dom';
 const Category = () => {
   const [data, setData] = useState<CategoryInfo>();
   const navigate = useNavigate();
+  const fetchData = async () => {
+    const result = await axios.get<null, ResType<CategoryInfo>>('/v1/category');
+    if (result.state === 200) {
+      setData(result.data);
+    }
+  };
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios.get<null, ResType<CategoryInfo>>('/v1/category');
-      if (result.state === 200) {
-        setData(result.data);
-      }
-    };
     fetchData();
   }, []);
 
@@ -42,7 +42,10 @@ const Category = () => {
                 styles['category-left-menu-item'] +
                 ' ' +
                 (item.category_name === data.current?.category_name ? styles['category-left-menu-item-active'] : '')
-              }>
+              }
+              onClick={() => {
+                fetchData();
+              }}>
               {item.category_name}
             </div>
           ))}
