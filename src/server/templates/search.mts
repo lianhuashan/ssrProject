@@ -1,15 +1,16 @@
-const Mock = require('mockjs')
-const Random = Mock.Random
+import mock from 'mockjs';
+// const Mock = require('mockjs')
+const Random = mock.Random;
 export const searchTip = (qs?: string) => {
   if (qs) {
     Random.extend({
       qs: function (date?: any) {
-        const qsArr = qs.split('').concat(qs)
-        console.log(qsArr)
-        return this.pick(qsArr)
-      },
-    })
-    Random.qs()
+        const qsArr = qs.split('').concat(qs);
+        console.log(qsArr);
+        return this.pick(qsArr);
+      }
+    });
+    Random.qs();
   }
   return {
     keyword: qs,
@@ -19,101 +20,101 @@ export const searchTip = (qs?: string) => {
         type: 3,
         word: '精品小说',
         categoryId: '100000',
-        totalCount: 19740,
+        totalCount: 19740
       },
       {
         type: 1,
         word: '兰小欢',
         categoryId: '',
-        totalCount: 1,
+        totalCount: 1
       },
       {
         type: 1,
         word: '渤海小吏',
         categoryId: '',
-        totalCount: 4,
+        totalCount: 4
       },
       {
         type: 1,
         word: '陈磊·半小时漫画团队',
         categoryId: '',
-        totalCount: 28,
+        totalCount: 28
       },
       {
         type: 1,
         word: '王小波',
         categoryId: '',
-        totalCount: 29,
+        totalCount: 29
       },
       {
         type: 0,
         word: '色（贡布罗维奇小说全集）',
         categoryId: '',
         totalCount: 0,
-        bookId: '37058350',
+        bookId: '37058350'
       },
       {
         type: 0,
         word: '满：一部异乡小说',
         categoryId: '',
         totalCount: 0,
-        bookId: '3300060719',
+        bookId: '3300060719'
       },
       {
         type: 0,
         word: '100：小小说百篇',
         categoryId: '',
         totalCount: 0,
-        bookId: '23796228',
+        bookId: '23796228'
       },
       {
         type: 0,
         word: '霄（民国通俗小说典藏文库·冯玉奇卷）',
         categoryId: '',
         totalCount: 0,
-        bookId: '3300025880',
+        bookId: '3300025880'
       },
       {
         type: 0,
         word: '斗（民国通俗小说典藏文库·冯玉奇卷）',
         categoryId: '',
         totalCount: 0,
-        bookId: '3300025875',
+        bookId: '3300025875'
       },
       {
         type: 0,
         word: '孽（民国通俗小说典藏文库·冯玉奇卷）',
         categoryId: '',
         totalCount: 0,
-        bookId: '3300025858',
+        bookId: '3300025858'
       },
       {
         type: 0,
         word: '桥（中小学生必读丛书）',
         categoryId: '',
         totalCount: 0,
-        bookId: '166651',
+        bookId: '166651'
       },
       {
         type: 0,
         word: '罪（民国通俗小说典藏文库·冯玉奇卷）',
         categoryId: '',
         totalCount: 0,
-        bookId: '3300025836',
+        bookId: '3300025836'
       },
       {
         type: 0,
         word: 'LOL：一并超，小伙子什么挂？',
         categoryId: '',
         totalCount: 0,
-        bookId: '46537312',
+        bookId: '46537312'
       },
       {
         type: 0,
         word: '小巷人家',
         categoryId: '',
         totalCount: 0,
-        bookId: '3300049180',
+        bookId: '3300049180'
       },
       {
         type: 0,
@@ -121,21 +122,21 @@ export const searchTip = (qs?: string) => {
         categoryId: '',
         totalCount: 0,
         bookId: '216212',
-        author: '安托万·德·圣埃克苏佩里著',
+        author: '安托万·德·圣埃克苏佩里著'
       },
       {
         type: 0,
         word: '小镇喧嚣：一个乡镇政治运作的演绎与阐释',
         categoryId: '',
         totalCount: 0,
-        bookId: '3300019741',
+        bookId: '3300019741'
       },
       {
         type: 0,
         word: '小王子（英文版）',
         categoryId: '',
         totalCount: 0,
-        bookId: '22720170',
+        bookId: '22720170'
       },
       {
         type: 0,
@@ -143,7 +144,7 @@ export const searchTip = (qs?: string) => {
         categoryId: '',
         totalCount: 0,
         bookId: '3300024931',
-        author: '雷军 徐洁云',
+        author: '雷军 徐洁云'
       },
       {
         type: 0,
@@ -151,7 +152,7 @@ export const searchTip = (qs?: string) => {
         categoryId: '',
         totalCount: 0,
         bookId: '912417',
-        author: '彼得·D.希夫 安德鲁·J.希夫',
+        author: '彼得·D.希夫 安德鲁·J.希夫'
       },
       {
         type: 0,
@@ -159,7 +160,7 @@ export const searchTip = (qs?: string) => {
         categoryId: '',
         totalCount: 0,
         bookId: '855754',
-        author: '奥尔科特',
+        author: '奥尔科特'
       },
       {
         type: 0,
@@ -167,7 +168,7 @@ export const searchTip = (qs?: string) => {
         categoryId: '',
         totalCount: 0,
         bookId: '40527666',
-        author: '圣埃克絮佩里',
+        author: '圣埃克絮佩里'
       },
       {
         type: 0,
@@ -175,82 +176,82 @@ export const searchTip = (qs?: string) => {
         categoryId: '',
         totalCount: 0,
         bookId: '43318721',
-        author: '安东尼·德·圣埃克苏佩里',
+        author: '安东尼·德·圣埃克苏佩里'
       },
       {
         type: 0,
         word: '小女生职场修行记',
         categoryId: '',
         totalCount: 0,
-        bookId: '630821',
+        bookId: '630821'
       },
       {
         type: 0,
         word: '小孩',
         categoryId: '',
         totalCount: 0,
-        bookId: '27058200',
+        bookId: '27058200'
       },
       {
         type: 0,
         word: '小家，越住越大',
         categoryId: '',
         totalCount: 0,
-        bookId: '26433739',
+        bookId: '26433739'
       },
       {
         type: 0,
         word: '小而美：持续盈利的经营法则',
         categoryId: '',
         totalCount: 0,
-        bookId: '3300050592',
+        bookId: '3300050592'
       },
       {
         type: 0,
         word: '小英雄雨来',
         categoryId: '',
         totalCount: 0,
-        bookId: '33820297',
+        bookId: '33820297'
       },
       {
         type: 0,
         word: '小逻辑',
         categoryId: '',
         totalCount: 0,
-        bookId: '842282',
+        bookId: '842282'
       },
       {
         type: 0,
         word: '小妇人：LITTLE WOMEN（英文原版）',
         categoryId: '',
         totalCount: 0,
-        bookId: '820028',
+        bookId: '820028'
       },
       {
         type: 0,
         word: '小窗幽记',
         categoryId: '',
         totalCount: 0,
-        bookId: '919921',
+        bookId: '919921'
       },
       {
         type: 0,
         word: '小团圆',
         categoryId: '',
         totalCount: 0,
-        bookId: '22799665',
+        bookId: '22799665'
       },
       {
         type: 0,
         word: '小说的骨架：好提纲成就好故事',
         categoryId: '',
         totalCount: 0,
-        bookId: '23071748',
-      },
+        bookId: '23071748'
+      }
     ],
-    'parts|2': [Mock.mock('@qs')],
-  }
-}
+    'parts|2': [mock.mock('@qs')]
+  };
+};
 
 export const searchGlobal = (qs?: string) => {
   return {
@@ -274,8 +275,8 @@ export const searchGlobal = (qs?: string) => {
           format: 'epub',
           finished: 1,
           paperBook: {
-            skuId: '11942782',
-          },
+            skuId: '11942782'
+          }
         },
         searchIdx: 1,
         searchReport:
@@ -286,7 +287,7 @@ export const searchGlobal = (qs?: string) => {
         seq: 1,
         type: 0,
         readingCount: 0,
-        reading: 0,
+        reading: 0
       },
       {
         bookInfo: {
@@ -307,28 +308,29 @@ export const searchGlobal = (qs?: string) => {
           format: 'txt',
           finished: 1,
           paperBook: {
-            skuId: '',
+            skuId: ''
           },
           star: 76,
           newRating: 760,
           newRatingCount: 242,
           newRatingDetail: {
-            title: '',
-          },
+            title: ''
+          }
         },
         searchIdx: 2,
         searchReport:
           'eyJxdWVyeSI6IueyvuWTgeWwj+ivtCIsInF1ZXJ5X3VpZCI6IjBuX1JzNVNXZFFHRzRwRkoiLCJpdGVtX2lkeCI6MiwiaXRlbV9pZCI6IjU4NTA2NyIsIml0ZW1fdHlwZSI6MH0=',
         type: 0,
         readingCount: 21,
-        reading: 21,
+        reading: 21
       },
       {
         bookInfo: {
           bookId: '3300034709',
           title: '诺贝尔文学奖得主莫言中篇小说精品系列（套装全8册）',
           author: '莫言',
-          cover: 'https://weread-1258476243.file.myqcloud.com/weread/cover/56/cpPlatform_5LiVpxbShjangfj19VAshL/s_cpPlatform_5LiVpxbShjangfj19VAshL.jpg',
+          cover:
+            'https://weread-1258476243.file.myqcloud.com/weread/cover/56/cpPlatform_5LiVpxbShjangfj19VAshL/s_cpPlatform_5LiVpxbShjangfj19VAshL.jpg',
           intro:
             '莫言中篇小说8本，含《透明的红萝卜》《爆炸》《你的行为使我们恐惧》《白棉花》《筑路》《梦境与杂种》《三十年前的一次长跑比赛》《司令的女人》。囊括了莫言自创作开始到获得诺贝尔文学奖期间全部中篇作品，表现了不同时期的艺术风格，可以帮助读者深入了解莫言中篇小说的丰富内涵和体量，为学者、评论家研究提供材料。莫言长篇写作中经常表现的主题，在中篇的创作中也多有所表现。比如初恋情结、异禀儿童、超感与通感、饥饿与狂欢、“计划生育”与高考等，都是莫言经常表现的主题。在反复的表现过程中，形成了莫言式的象征意味，也显露出莫言对生命的重视和对现代社会人类生存状态的反思。',
           publisher: '浙江文艺出版社',
@@ -342,22 +344,23 @@ export const searchGlobal = (qs?: string) => {
           format: 'epub',
           finished: 1,
           paperBook: {
-            skuId: '',
-          },
+            skuId: ''
+          }
         },
         searchIdx: 3,
         searchReport:
           'eyJxdWVyeSI6IueyvuWTgeWwj+ivtCIsInF1ZXJ5X3VpZCI6IjBuX1JzNVNXZFFHRzRwRkoiLCJpdGVtX2lkeCI6MywiaXRlbV9pZCI6IjMzMDAwMzQ3MDkiLCJpdGVtX3R5cGUiOjB9',
         type: 0,
         readingCount: 13,
-        reading: 13,
+        reading: 13
       },
       {
         bookInfo: {
           bookId: '3300041327',
           title: '长篇小说的高度：茅盾文学奖获奖作品精读',
           author: '王春林',
-          cover: 'https://weread-1258476243.file.myqcloud.com/weread/cover/51/cpPlatform_iMiwiPGANf6SzKrTPArb5q/s_cpPlatform_iMiwiPGANf6SzKrTPArb5q.jpg',
+          cover:
+            'https://weread-1258476243.file.myqcloud.com/weread/cover/51/cpPlatform_iMiwiPGANf6SzKrTPArb5q/s_cpPlatform_iMiwiPGANf6SzKrTPArb5q.jpg',
           intro:
             '本书是当代著名文学评论家王春林对茅盾文学奖获奖作品的细读与评析，收录了其对于《人世间》《推拿》《白鹿原》《蛙》《一句顶一万句》《繁花》等广受读者欢迎的18部获奖作品的解读。茅盾文学奖文学奖是中国当代极具权威和影响力的文学奖项之一，代表着中国当代长篇小说创作的高度。自首届至今，茅盾文学奖历经40载，已评出近50部各具特色特色的长篇小说。王春林曾任多届茅盾文学奖、鲁迅文学奖等重要文学奖项的评委，长期从事中国现当代文学研究与批评，对中国当代文学有着深入、独特的见解。本书中，他从小说的结构方式、叙事手法、语言特色、主旨意蕴等多个角度切入，带领读者品赏、领略这些获奖作品的丰厚内涵和艺术魅力。',
           publisher: '浙江文艺出版社',
@@ -371,15 +374,15 @@ export const searchGlobal = (qs?: string) => {
           format: 'epub',
           finished: 1,
           paperBook: {
-            skuId: '',
-          },
+            skuId: ''
+          }
         },
         searchIdx: 4,
         searchReport:
           'eyJxdWVyeSI6IueyvuWTgeWwj+ivtCIsInF1ZXJ5X3VpZCI6IjBuX1JzNVNXZFFHRzRwRkoiLCJpdGVtX2lkeCI6NCwiaXRlbV9pZCI6IjMzMDAwNDEzMjciLCJpdGVtX3R5cGUiOjB9',
         type: 0,
         readingCount: 8,
-        reading: 8,
+        reading: 8
       },
       {
         bookInfo: {
@@ -399,20 +402,20 @@ export const searchGlobal = (qs?: string) => {
           format: 'txt',
           finished: 1,
           paperBook: {
-            skuId: '',
+            skuId: ''
           },
           newRating: 697,
           newRatingCount: 33,
           newRatingDetail: {
-            title: '',
-          },
+            title: ''
+          }
         },
         searchIdx: 5,
         searchReport:
           'eyJxdWVyeSI6IueyvuWTgeWwj+ivtCIsInF1ZXJ5X3VpZCI6IjBuX1JzNVNXZFFHRzRwRkoiLCJpdGVtX2lkeCI6NSwiaXRlbV9pZCI6IjU4MTgwOCIsIml0ZW1fdHlwZSI6MH0=',
         type: 0,
         readingCount: 6,
-        reading: 6,
+        reading: 6
       },
       {
         bookInfo: {
@@ -433,20 +436,20 @@ export const searchGlobal = (qs?: string) => {
           format: 'txt',
           finished: 1,
           paperBook: {
-            skuId: '',
+            skuId: ''
           },
           newRating: 795,
           newRatingCount: 44,
           newRatingDetail: {
-            title: '',
-          },
+            title: ''
+          }
         },
         searchIdx: 6,
         searchReport:
           'eyJxdWVyeSI6IueyvuWTgeWwj+ivtCIsInF1ZXJ5X3VpZCI6IjBuX1JzNVNXZFFHRzRwRkoiLCJpdGVtX2lkeCI6NiwiaXRlbV9pZCI6IjU4MTgwOSIsIml0ZW1fdHlwZSI6MH0=',
         type: 0,
         readingCount: 4,
-        reading: 4,
+        reading: 4
       },
       {
         bookInfo: {
@@ -467,15 +470,15 @@ export const searchGlobal = (qs?: string) => {
           format: 'txt',
           finished: 1,
           paperBook: {
-            skuId: '',
-          },
+            skuId: ''
+          }
         },
         searchIdx: 7,
         searchReport:
           'eyJxdWVyeSI6IueyvuWTgeWwj+ivtCIsInF1ZXJ5X3VpZCI6IjBuX1JzNVNXZFFHRzRwRkoiLCJpdGVtX2lkeCI6NywiaXRlbV9pZCI6IjU1MzE0OSIsIml0ZW1fdHlwZSI6MH0=',
         type: 0,
         readingCount: 1,
-        reading: 1,
+        reading: 1
       },
       {
         bookInfo: {
@@ -496,20 +499,20 @@ export const searchGlobal = (qs?: string) => {
           format: 'txt',
           finished: 1,
           paperBook: {
-            skuId: '',
+            skuId: ''
           },
           newRating: 473,
           newRatingCount: 55,
           newRatingDetail: {
-            title: '',
-          },
+            title: ''
+          }
         },
         searchIdx: 8,
         searchReport:
           'eyJxdWVyeSI6IueyvuWTgeWwj+ivtCIsInF1ZXJ5X3VpZCI6IjBuX1JzNVNXZFFHRzRwRkoiLCJpdGVtX2lkeCI6OCwiaXRlbV9pZCI6IjYzNDIyNiIsIml0ZW1fdHlwZSI6MH0=',
         type: 0,
         readingCount: 1,
-        reading: 1,
+        reading: 1
       },
       {
         bookInfo: {
@@ -530,15 +533,15 @@ export const searchGlobal = (qs?: string) => {
           format: 'epub',
           finished: 1,
           paperBook: {
-            skuId: '',
-          },
+            skuId: ''
+          }
         },
         searchIdx: 9,
         searchReport:
           'eyJxdWVyeSI6IueyvuWTgeWwj+ivtCIsInF1ZXJ5X3VpZCI6IjBuX1JzNVNXZFFHRzRwRkoiLCJpdGVtX2lkeCI6OSwiaXRlbV9pZCI6IjI2NDUyMDkwIiwiaXRlbV90eXBlIjowfQ==',
         type: 0,
         readingCount: 1,
-        reading: 1,
+        reading: 1
       },
       {
         bookInfo: {
@@ -559,15 +562,15 @@ export const searchGlobal = (qs?: string) => {
           format: 'epub',
           finished: 1,
           paperBook: {
-            skuId: '',
-          },
+            skuId: ''
+          }
         },
         searchIdx: 10,
         searchReport:
           'eyJxdWVyeSI6IueyvuWTgeWwj+ivtCIsInF1ZXJ5X3VpZCI6IjBuX1JzNVNXZFFHRzRwRkoiLCJpdGVtX2lkeCI6MTAsIml0ZW1faWQiOiIzMTM1OTUyNSIsIml0ZW1fdHlwZSI6MH0=',
         type: 0,
         readingCount: 1,
-        reading: 1,
+        reading: 1
       },
       {
         bookInfo: {
@@ -588,15 +591,15 @@ export const searchGlobal = (qs?: string) => {
           format: 'txt',
           finished: 1,
           paperBook: {
-            skuId: '',
-          },
+            skuId: ''
+          }
         },
         searchIdx: 11,
         searchReport:
           'eyJxdWVyeSI6IueyvuWTgeWwj+ivtCIsInF1ZXJ5X3VpZCI6IjBuX1JzNVNXZFFHRzRwRkoiLCJpdGVtX2lkeCI6MTEsIml0ZW1faWQiOiIzODEzMDM3OSIsIml0ZW1fdHlwZSI6MH0=',
         type: 0,
         readingCount: 1,
-        reading: 1,
+        reading: 1
       },
       {
         bookInfo: {
@@ -617,15 +620,15 @@ export const searchGlobal = (qs?: string) => {
           format: 'txt',
           finished: 1,
           paperBook: {
-            skuId: '',
-          },
+            skuId: ''
+          }
         },
         searchIdx: 12,
         searchReport:
           'eyJxdWVyeSI6IueyvuWTgeWwj+ivtCIsInF1ZXJ5X3VpZCI6IjBuX1JzNVNXZFFHRzRwRkoiLCJpdGVtX2lkeCI6MTIsIml0ZW1faWQiOiI0MTczNDMwMSIsIml0ZW1fdHlwZSI6MH0=',
         type: 0,
         readingCount: 1,
-        reading: 1,
+        reading: 1
       },
       {
         bookInfo: {
@@ -645,20 +648,20 @@ export const searchGlobal = (qs?: string) => {
           format: 'epub',
           finished: 1,
           paperBook: {
-            skuId: '',
+            skuId: ''
           },
           newRating: 812,
           newRatingCount: 69,
           newRatingDetail: {
-            title: '',
-          },
+            title: ''
+          }
         },
         searchIdx: 13,
         searchReport:
           'eyJxdWVyeSI6IueyvuWTgeWwj+ivtCIsInF1ZXJ5X3VpZCI6IjBuX1JzNVNXZFFHRzRwRkoiLCJpdGVtX2lkeCI6MTMsIml0ZW1faWQiOiIyMzUwNzcxNiIsIml0ZW1fdHlwZSI6MH0=',
         type: 0,
         readingCount: 1,
-        reading: 1,
+        reading: 1
       },
       {
         bookInfo: {
@@ -679,15 +682,15 @@ export const searchGlobal = (qs?: string) => {
           format: 'txt',
           finished: 1,
           paperBook: {
-            skuId: '',
-          },
+            skuId: ''
+          }
         },
         searchIdx: 14,
         searchReport:
           'eyJxdWVyeSI6IueyvuWTgeWwj+ivtCIsInF1ZXJ5X3VpZCI6IjBuX1JzNVNXZFFHRzRwRkoiLCJpdGVtX2lkeCI6MTQsIml0ZW1faWQiOiI1ODE4MTAiLCJpdGVtX3R5cGUiOjB9',
         type: 0,
         readingCount: 0,
-        reading: 0,
+        reading: 0
       },
       {
         bookInfo: {
@@ -708,15 +711,15 @@ export const searchGlobal = (qs?: string) => {
           format: 'txt',
           finished: 1,
           paperBook: {
-            skuId: '',
-          },
+            skuId: ''
+          }
         },
         searchIdx: 15,
         searchReport:
           'eyJxdWVyeSI6IueyvuWTgeWwj+ivtCIsInF1ZXJ5X3VpZCI6IjBuX1JzNVNXZFFHRzRwRkoiLCJpdGVtX2lkeCI6MTUsIml0ZW1faWQiOiI1OTc1MzMiLCJpdGVtX3R5cGUiOjB9',
         type: 0,
         readingCount: 0,
-        reading: 0,
+        reading: 0
       },
       {
         bookInfo: {
@@ -737,15 +740,15 @@ export const searchGlobal = (qs?: string) => {
           format: 'epub',
           finished: 1,
           paperBook: {
-            skuId: '',
-          },
+            skuId: ''
+          }
         },
         searchIdx: 16,
         searchReport:
           'eyJxdWVyeSI6IueyvuWTgeWwj+ivtCIsInF1ZXJ5X3VpZCI6IjBuX1JzNVNXZFFHRzRwRkoiLCJpdGVtX2lkeCI6MTYsIml0ZW1faWQiOiI1OTc2MDAiLCJpdGVtX3R5cGUiOjB9',
         type: 0,
         readingCount: 0,
-        reading: 0,
+        reading: 0
       },
       {
         bookInfo: {
@@ -766,15 +769,15 @@ export const searchGlobal = (qs?: string) => {
           format: 'epub',
           finished: 1,
           paperBook: {
-            skuId: '',
-          },
+            skuId: ''
+          }
         },
         searchIdx: 17,
         searchReport:
           'eyJxdWVyeSI6IueyvuWTgeWwj+ivtCIsInF1ZXJ5X3VpZCI6IjBuX1JzNVNXZFFHRzRwRkoiLCJpdGVtX2lkeCI6MTcsIml0ZW1faWQiOiI5MTU3MzciLCJpdGVtX3R5cGUiOjB9',
         type: 0,
         readingCount: 0,
-        reading: 0,
+        reading: 0
       },
       {
         bookInfo: {
@@ -795,15 +798,15 @@ export const searchGlobal = (qs?: string) => {
           format: 'epub',
           finished: 1,
           paperBook: {
-            skuId: '',
-          },
+            skuId: ''
+          }
         },
         searchIdx: 18,
         searchReport:
           'eyJxdWVyeSI6IueyvuWTgeWwj+ivtCIsInF1ZXJ5X3VpZCI6IjBuX1JzNVNXZFFHRzRwRkoiLCJpdGVtX2lkeCI6MTgsIml0ZW1faWQiOiIyMzYwMDE1MiIsIml0ZW1fdHlwZSI6MH0=',
         type: 0,
         readingCount: 0,
-        reading: 0,
+        reading: 0
       },
       {
         bookInfo: {
@@ -823,15 +826,15 @@ export const searchGlobal = (qs?: string) => {
           format: 'txt',
           finished: 1,
           paperBook: {
-            skuId: '',
-          },
+            skuId: ''
+          }
         },
         searchIdx: 19,
         searchReport:
           'eyJxdWVyeSI6IueyvuWTgeWwj+ivtCIsInF1ZXJ5X3VpZCI6IjBuX1JzNVNXZFFHRzRwRkoiLCJpdGVtX2lkeCI6MTksIml0ZW1faWQiOiIzODEzMDM3MyIsIml0ZW1fdHlwZSI6MH0=',
         type: 0,
         readingCount: 0,
-        reading: 0,
+        reading: 0
       },
       {
         bookInfo: {
@@ -851,22 +854,22 @@ export const searchGlobal = (qs?: string) => {
           format: 'txt',
           finished: 1,
           paperBook: {
-            skuId: '13492818',
-          },
+            skuId: '13492818'
+          }
         },
         searchIdx: 20,
         searchReport:
           'eyJxdWVyeSI6IueyvuWTgeWwj+ivtCIsInF1ZXJ5X3VpZCI6IjBuX1JzNVNXZFFHRzRwRkoiLCJpdGVtX2lkeCI6MjAsIml0ZW1faWQiOiIzODEzMDM4MSIsIml0ZW1fdHlwZSI6MH0=',
         type: 0,
         readingCount: 0,
-        reading: 0,
-      },
+        reading: 0
+      }
     ],
     parts: ['精品小说', '小说', '精品'],
     'totalCount|200': 70,
     correction: '',
     hasMore: 1,
     queryUid: 'eyJxdWVyeSI6IueyvuWTgeWwj+ivtCIsInJhblN0ciI6IjBuX1JzNVNXZFFHRzRwRkoiLCJzY29wZSI6MH0=',
-    sid: '9vVGIv2t57',
-  }
-}
+    sid: '9vVGIv2t57'
+  };
+};

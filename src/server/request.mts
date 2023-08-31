@@ -1,13 +1,19 @@
 import express from 'express';
 import { glob } from 'glob';
 import Mock from 'mockjs';
+import fs from 'fs';
+import { resolve, dirname } from 'path';
+import { searchGlobal, searchTip } from './templates/search.mjs';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 // const Koa = require('koa')
 // const Router = require('koa-router')
 // const glob = require('glob')
-const fs = require('fs');
-const { resolve } = require('path');
+// const fs = require('fs');
+// const { resolve } = require('path');
 // const Mock = require('mockjs');
-const { searchTip, searchGlobal } = require('./templates/search');
+// const { searchTip, searchGlobal } = require('./templates/search');
 
 const router = express.Router();
 
@@ -27,7 +33,9 @@ router.get('/v1/search/global', (req, res, next) => {
   res.send({ data: Mock.mock(searchGlobal(qs)), state: 200, type: 'success' });
 });
 
-glob(resolve(__dirname, '../mock/api', '**/*.json')).then((files) => {
+console.log('dirname', __dirname);
+
+glob(resolve(__dirname, '../../mock/api', '**/*.json')).then((files) => {
   console.log('glob', files.length);
   files.forEach((item, i) => {
     let apiJsonPath = item && item.split('/api')[1];

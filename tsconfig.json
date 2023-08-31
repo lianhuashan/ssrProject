@@ -20,7 +20,7 @@
     "outDir": "./public/es",
     "rootDir": "./",
     "strict": true,
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
