@@ -3,10 +3,10 @@ import { glob } from 'glob';
 import Mock from 'mockjs';
 import fs from 'fs';
 import { resolve, dirname } from 'path';
-import { searchGlobal, searchTip } from './templates/search.mjs';
+import { searchGlobal, searchTip } from './templates/search';
 import { fileURLToPath } from 'url';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+// const __dirname = __dirname
 // const Koa = require('koa')
 // const Router = require('koa-router')
 // const glob = require('glob')

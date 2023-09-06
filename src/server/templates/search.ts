@@ -1,5 +1,4 @@
-import mock from 'mockjs';
-// const Mock = require('mockjs')
+import * as mock from 'mockjs';
 const Random = mock.Random;
 export const searchTip = (qs?: string) => {
   if (qs) {
